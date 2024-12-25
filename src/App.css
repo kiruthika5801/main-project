@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* header css */
+.one {
+  /* background-color: lightcyan; */
+  height: 180px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.two {
+  /* background-color: lightpink; */
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.three {
+  /* background-color: lightskyblue; */
+  height: 180px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60%;
+  height: 150px;
+}
+
+.image {
+  background-color: #a3ad6f;
+  width: 50px ;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.left {
+  /* background-color: brown; */
+  width: 50%;
+  height: 90px;
+}
+
+
+.bar {
+  
+  background-image: url(./images/bg_menu.jpg);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-out {
+  /* background-color: burlywood; */
+  height: 80px;
+  display: flex;
+    justify-content: space-evenly;
+
+}
+
+.navbar-nav .nav-link {
+  color: black;
+  font-size: 12.992px;
+  font-weight:600;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;  
+}
+.bag{
+  width:21px ;
+  height: 21px;
+  color: white;
+}
+.phone{
+  width:21px ;
+  height: 21px;
+  color: white;
+
+}
+
+
+
+
+@media (max-width: 576px) {
+  .one {
+    display: none;
+  }
+
+  .left {
+    /* background-color: transparent; */
+    height: 55px;
+  }
+
+  .three .left span {
+    display: none;
+  }
+
+  .three {
+    display: flex;
+    justify-content: end;
+    position: relative;
+  }
+  .bar-out{
+    position: absolute;
+    left: 80px;    
+    top: 50px;
+  }
+  .bar{
+    background-image: none;
+  }
+
+
+}
+
+
+/*  Tablets in portrait mode.  */
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .one .left span,
+  .three .left span {
+    display: none;
+  }
+
+  .one .left svg {
+    display: none;
+  }
+
+  .one .left .image
+   {
+    background-color: transparent;
+
+  }
+
+  .one {
+    display: flex;
+    justify-content: left;
+  }
+
+  .three {
+
+    justify-content: end;
+  }
+
+  svg {
+    /* fill: black; */
+    width: 30px;
+    height: 30px;
+
+  }
+  .bar-out{
+    position: absolute;
+    right: 318px;    
+    top: 30px;
+  }
+  .bar{
+    background-image: none;
+  }
+  .three .left .image {
+    width: 60px;
+    height: 60px;
+   
+  }
+  /* .three .left .image svg{
+    width: 30px;
+    height: 30px;
+
+  } */
+
+  
+  
+
+
+}
