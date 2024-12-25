@@ -3,7 +3,6 @@ import logo from '../images/mains.png'
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 
-
 function Header() {
   return (
     <div>
