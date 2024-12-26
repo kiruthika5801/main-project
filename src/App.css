@@ -64,7 +64,7 @@
 }
 
 .navbar-nav .nav-link {
-  color: black;
+  color: white;
   font-size: 12.992px;
   font-weight:600;
   height: 80px;
@@ -114,6 +114,16 @@
   .bar{
     background-image: none;
   }
+  .navbar-nav .nav-link{
+    color: black;
+  }
+  .navbar-nav .nav-link{
+    color: black;
+  }
+  .navbar-nav{
+    background-color: #a3ad6f;
+  }
+
 
 
 }
@@ -167,12 +177,13 @@
     height: 60px;
    
   }
-  /* .three .left .image svg{
-    width: 30px;
-    height: 30px;
-
-  } */
-
+  .navbar-nav .nav-link{
+    color: black;
+  }
+  .navbar-nav{
+    background-color: #a3ad6f;
+  }
+  
   
   
 
