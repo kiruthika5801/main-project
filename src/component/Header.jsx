@@ -7,8 +7,8 @@ function Header() {
   return (
     <div>
       <Container fluid>
-        <Row className="h-auto" >
-          <Col className=" one ">
+        <Row className="h-auto " >
+          <Col sm={4} className=" one ">
             <Row className="left w-auto me-5">
 
               <Col className="text-end w-auto" lg={9}>
@@ -16,7 +16,7 @@ function Header() {
                 <Row><span >800-123-4567</span></Row>
 
               </Col>
-              <Col lg={3} className="w-auto">
+              <Col  className="w-auto">
                 <Row className="image">
                   
                   <FiPhone className="phone mt-3" />
@@ -28,7 +28,7 @@ function Header() {
 
           </Col>
           <Col className="text-center  two"><img className="logo" src={logo} alt="tie-tales" /></Col>
-          <Col className=" three">
+          <Col  className=" three">
             <Row className="left ms-5 w-auto">
 
 
