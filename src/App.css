@@ -67,11 +67,13 @@
   color: white;
   font-size: 12.992px;
   font-weight:600;
-  height: 80px;
+ line-height:40px ;
+  /* height: 80px; */
   display: flex;
   align-items: center;
   letter-spacing: 2px;  
 }
+
 .bag{
   width:21px ;
   height: 21px;
@@ -90,6 +92,9 @@
 @media (max-width: 576px) {
   .one {
     display: none;
+  }
+  .logo{
+    width: 100%;
   }
 
   .left {
@@ -122,7 +127,20 @@
   }
   .navbar-nav{
     background-color: #a3ad6f;
+    
+    
   }
+  .offcanvas-body{
+    padding: 0 !important;  
+  }
+  .offcanvas-backdrop{
+    display: none;
+  }
+  .offcanvas{
+     --bs-offcanvas-width: 506px !important;    
+}
+  
+  
 
 
 
@@ -132,6 +150,10 @@
 /*  Tablets in portrait mode.  */
 
 @media (min-width: 577px) and (max-width: 768px) {
+
+  .logo{
+    width: 100%;
+  }
 
   .one .left span,
   .three .left span {
@@ -166,8 +188,8 @@
   }
   .bar-out{
     position: absolute;
-    right: 318px;    
-    top: 30px;
+    right: 485px;    
+    top: 42px;
   }
   .bar{
     background-image: none;
@@ -182,19 +204,17 @@
   }
   .navbar-nav{
     background-color: #a3ad6f;
-    margin: 0 !important;
-    padding: 0 !important;
     width: 100%;
     
   }
   .offcanvas-body{
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
+    padding: 0 !important;   
   }
+  .offcanvas-backdrop{
+    display: none;
+  }
+  .offcanvas{
+    --bs-offcanvas-width: 360px !important;    
+}
   
-  
-  
-
-
 }
