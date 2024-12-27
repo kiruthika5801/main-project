@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 /* header css */
-
 .one {
   background-color: lightcyan;
   height: 180px;
@@ -12,7 +11,6 @@
   justify-content: right;
   align-items: center;
 }
-
 .two {
   background-color: lightpink;
   height: 180px;
@@ -20,35 +18,28 @@
   justify-content: center;
   align-items: center;
 }
-
 .three {
   background-color: lightskyblue;
   height: 180px;
   display: flex;
   align-items: center;
 }
-
 .logo {
   width: 60%;
   height: 150px;
 }
-
 .image {
   background-color: #a3ad6f;
   width: 50px ;
   height: 50px;
   border-radius: 50px;
 }
-
 .left {
   /* background-color: brown; */
   width: 50%;
   height: 90px;
 }
-
-
-.bar {
-  
+.bar { 
   background-image: url(./images/bg_menu.jpg);
   height: 90px;
   display: flex;
@@ -61,10 +52,7 @@
   height: 80px;
   display: flex;
     justify-content: space-evenly;
-    
-
 }
-
 .navbar-nav .nav-link {
   color: white;
   font-size: 12.992px;
@@ -75,7 +63,15 @@
   align-items: center;
   letter-spacing: 2px;  
 }
+.offcanvas-body div{
+  padding-left: 0px !important;
+ 
+}
 
+.navbar-nav a{
+ padding-left: 20px;
+ 
+}
 .bag{
   width:21px ;
   height: 21px;
@@ -85,8 +81,8 @@
   width:21px ;
   height: 21px;
   color: white;
-
 }
+
 
 
 
@@ -123,10 +119,14 @@
   }
   .bar{
     background-image: none;
+    height: auto; /* Reset the height */
+    padding: 0; /* Ensure no extra padding */
   }
  
   .navbar-nav .nav-link{
     color:white;
+    border-bottom: 1px solid #88915c; 
+   
   }
   .navbar-nav{
     background-color: #a3ad6f;
@@ -198,6 +198,9 @@
   }
   .bar{
     background-image: none;
+    height: auto; /* Reset the height */
+    padding: 0; /* Ensure no extra padding */
+    
   }
   .three .left .image {
     width: 60px;
@@ -206,6 +209,7 @@
   }
   .navbar-nav .nav-link{
     color: white;
+    border-bottom: 1px solid #88915c; 
   }
   .navbar-nav{
     background-color: #a3ad6f;
