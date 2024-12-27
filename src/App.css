@@ -124,11 +124,9 @@
   .bar{
     background-image: none;
   }
+ 
   .navbar-nav .nav-link{
-    color: black;
-  }
-  .navbar-nav .nav-link{
-    color: black;
+    color:white;
   }
   .navbar-nav{
     background-color: #a3ad6f;
@@ -207,7 +205,7 @@
    
   }
   .navbar-nav .nav-link{
-    color: black;
+    color: white;
   }
   .navbar-nav{
     background-color: #a3ad6f;
