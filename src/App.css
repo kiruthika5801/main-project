@@ -2,24 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PT Serif", serif;
 }
 /* header css */
 .one {
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   height: 180px;
   display: flex;
   justify-content: right;
   align-items: center;
 }
 .two {
-  background-color: lightpink;
+  /* background-color: lightpink; */
   height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .three {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   height: 180px;
   display: flex;
   align-items: center;
@@ -82,10 +83,13 @@
   height: 21px;
   color: white;
 }
-
-
-
-
+.span{
+  color: #928b84;
+  font-size: 13px;
+}
+.span-text{
+  font-size: 16.002px;
+}
 
 @media (max-width: 576px) {
   .one {
@@ -94,44 +98,35 @@
   .logo{
     width: 100%;
   }
-
   .left {
     /* background-color: transparent; */
     height: 55px;
   }
-
   .three .left span {
     display: none;
   }
-
   .three {
     display: flex;
     justify-content: end;
-    position: relative;
-   
+    position: relative;   
   }
   .bar-out{
     position: absolute;
     left: 260px;    
     top: 60px;
-    width: 20% !important;
-   
+    width: 20% !important;   
   }
   .bar{
     background-image: none;
     height: auto; /* Reset the height */
     padding: 0; /* Ensure no extra padding */
-  }
- 
+  } 
   .navbar-nav .nav-link{
     color:white;
-    border-bottom: 1px solid #88915c; 
-   
+    border-bottom: 1px solid #88915c;    
   }
   .navbar-nav{
-    background-color: #a3ad6f;
-    
-    
+    background-color: #a3ad6f;    
   }
   .offcanvas-body{
     padding: 0 !important;  
@@ -143,11 +138,6 @@
      --bs-offcanvas-width: 506px !important;    
 }
 
-  
-  
-
-
-
 }
 
 
@@ -158,37 +148,28 @@
   .logo{
     width: 100%;
   }
-
   .one .left span,
   .three .left span {
     display: none;
   }
-
   .one .left svg {
     display: none;
   }
-
   .one .left .image
    {
     background-color: transparent;
-
   }
-
   .one {
     display: flex;
     justify-content: left;
   }
-
   .three {
-
     justify-content: end;
   }
-
   svg {
     /* fill: black; */
     width: 30px;
     height: 30px;
-
   }
   .bar-out{
     position: absolute;
@@ -199,13 +180,11 @@
   .bar{
     background-image: none;
     height: auto; /* Reset the height */
-    padding: 0; /* Ensure no extra padding */
-    
+    padding: 0; /* Ensure no extra padding */    
   }
   .three .left .image {
     width: 60px;
-    height: 60px;
-   
+    height: 60px;   
   }
   .navbar-nav .nav-link{
     color: white;
@@ -213,8 +192,7 @@
   }
   .navbar-nav{
     background-color: #a3ad6f;
-    width: 100%;
-    
+    width: 100%;    
   }
   .offcanvas-body{
     padding: 0 !important;   

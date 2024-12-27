@@ -12,8 +12,8 @@ function Header() {
             <Row className="left w-auto me-5">
 
               <Col className="text-end w-auto" lg={9}>
-                <Row><span >Call Us</span></Row>
-                <Row><span >800-123-4567</span></Row>
+                <Row><span className="span" >Call Us</span></Row>
+                <Row><span className="span-text">800-123-4567</span></Row>
 
               </Col>
               <Col  className="w-auto">
@@ -40,8 +40,8 @@ function Header() {
               </Col>
               <Col className="w-auto" lg={9}>
 
-                <Row><span >your cart:</span></Row>
-                <Row><span >(2)-$120.00</span></Row>
+                <Row><span className="span" >your cart:</span></Row>
+                <Row><span className="span-text" >(2)-$120.00</span></Row>
 
               </Col>
 
