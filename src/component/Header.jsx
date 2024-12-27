@@ -13,7 +13,7 @@ function Header() {
 
               <Col className="text-end w-auto" lg={9}>
                 <Row><span className="span" >Call Us</span></Row>
-                <Row><span className="span-text">800-123-4567</span></Row>
+                <Row><span >800-123-4567</span></Row>
 
               </Col>
               <Col  className="w-auto">

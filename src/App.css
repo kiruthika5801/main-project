@@ -64,6 +64,10 @@
   align-items: center;
   letter-spacing: 2px;  
 }
+.navbar-nav .nav-link:hover{
+  color:rgb(241, 232, 232);
+
+}
 .offcanvas-body div{
   padding-left: 0px !important;
  
@@ -76,12 +80,13 @@
 .bag{
   width:21px ;
   height: 21px;
-  color: white;
+  color: white !important;
+  /* background-color: chartreuse; */
 }
 .phone{
-  width:21px ;
+  width:21px;
   height: 21px;
-  color: white;
+  color: white !important;
 }
 .span{
   color: #928b84;
@@ -90,6 +95,7 @@
 .span-text{
   font-size: 16.002px;
 }
+
 
 @media (max-width: 576px) {
   .one {
@@ -129,13 +135,15 @@
     background-color: #a3ad6f;    
   }
   .offcanvas-body{
-    padding: 0 !important;  
+    padding: 0 !important; 
   }
   .offcanvas-backdrop{
     display: none;
   }
   .offcanvas{
-     --bs-offcanvas-width: 506px !important;    
+     --bs-offcanvas-width: 506px !important;   
+      top: 180px !important;
+     
 }
 
 }
