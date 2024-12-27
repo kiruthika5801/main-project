@@ -9,7 +9,7 @@ function HeaderNav() {
     <div>
       <Container fluid>
         <Row className="bar">
-          <Col className="bar-out" md={7}>
+          <Col className="bar-out" md={9}>
             {/* Navbar with expand="lg" */}
             <Navbar expand="lg" className="mb-3">
               <Container fluid>
@@ -26,14 +26,14 @@ function HeaderNav() {
                   </Offcanvas.Header> */}
                   <Offcanvas.Body>
                     <Nav className="justify-content-end flex-grow-1 ps-5">
-                      <Nav.Link as={Link} to="#home">HOME </Nav.Link>
-                      <Nav.Link as={Link} to="#link">ABOUT </Nav.Link>
-                      <Nav.Link as={Link} to="#home">FEATURES</Nav.Link>
-                      <Nav.Link as={Link} to="#link">SHOP</Nav.Link>
-                      <Nav.Link as={Link} to="#home">TEAM</Nav.Link>
-                      <Nav.Link as={Link} to="#link">SERVICES</Nav.Link>
-                      <Nav.Link as={Link} to="#link">SHOP</Nav.Link>
-                      <Nav.Link as={Link} to="#link">CONTACTS</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#home">HOME </Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#link">ABOUT </Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#home">FEATURES</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#link">SHOP</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#home">TEAM</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#link">SERVICES</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#link">SHOP</Nav.Link>
+                      <Nav.Link as={Link} className='borde' to="#link">CONTACTS</Nav.Link>
 
                     </Nav>
 

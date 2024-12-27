@@ -7,11 +7,13 @@ import HeaderNav from './component/HeaderNav';
 
 
 
+
 function App() {
   return (
     <div>
       <Header/>
       <HeaderNav/>
+      {/* <Copy/> */}
       
      
      

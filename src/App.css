@@ -51,8 +51,9 @@
 .bar-out {
   /* background-color: burlywood; */
   height: 80px;
+ padding: 10px !important;
   display: flex;
-    justify-content: space-evenly;
+  justify-content: space-evenly;   
 }
 .navbar-nav .nav-link {
   color: white;
@@ -62,8 +63,9 @@
   /* height: 80px; */
   display: flex;
   align-items: center;
-  letter-spacing: 2px;  
+  letter-spacing: 3px;  
 }
+
 .navbar-nav .nav-link:hover{
   color:rgb(241, 232, 232);
 
@@ -95,6 +97,9 @@
 .span-text{
   font-size: 16.002px;
 }
+.nav-link{
+  margin-right: 15px;
+}
 
 
 @media (max-width: 576px) {
@@ -119,7 +124,7 @@
   .bar-out{
     position: absolute;
     left: 260px;    
-    top: 60px;
+    top: 50px;
     width: 20% !important;   
   }
   .bar{
@@ -142,10 +147,15 @@
   }
   .offcanvas{
      --bs-offcanvas-width: 506px !important;   
-      top: 180px !important;
-     
+      top: 180px !important;     
 }
-
+.bag{
+  color: rgba(0, 0, 0, 0.599) !important;
+ 
+}
+.three .image{
+  /* background-color: transparent; */
+}
 }
 
 
@@ -210,6 +220,13 @@
   }
   .offcanvas{
     --bs-offcanvas-width: 360px !important;    
+}
+.bag{
+  height:40px ;
+  color: rgba(0, 0, 0, 0.599) !important;
+}
+.three .image{
+  background-color: transparent;
 }
   
 }
