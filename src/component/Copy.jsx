@@ -119,3 +119,44 @@
 //   )
 // };
 // export default Copy;
+
+import React from 'react';
+import slideOne from "../images/slide1.jpg";
+import slideTwo from "../images/slide2.jpg";
+import slideThree from "../images/image.png";
+
+function Main() {
+    return (
+        <div className="swiffy-slider slider-nav-autoplay slider-indicators-round slider-nav-animation slider-nav-animation-appear" data-slider-nav-autoplay-interval="5000">
+            <ul className="slider-container">
+                <li>
+                    <img src={slideOne} style={{ width: "100%", height: "500px" }} alt="First slide" />
+                    <div className="slider-content">
+                        <h3>First Slide Label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </li>
+                <li>
+                    <img src={slideTwo} style={{ width: "100%", height: "500px" }} alt="Second slide" />
+                    <div className="slider-content">
+                        <h3>Second Slide Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </li>
+                <li>
+                    <img src={slideThree} style={{ width: "100%", height: "500px" }} alt="Third slide" />
+                    <div className="slider-content">
+                        <h3>Third Slide Label</h3>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </li>
+            </ul>
+            <button type="button" className="slider-nav"></button>
+            <button type="button" className="slider-nav slider-nav-next"></button>
+           
+        </div>
+    );
+}
+
+export default Main;
+
