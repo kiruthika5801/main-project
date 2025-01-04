@@ -236,6 +236,20 @@
 .carousel-indicators {
   bottom: 80px !important;
 }
+/* green */
+.green{
+  background-color:#88915c;
+  height: 160px;
+}
+.greenOne{
+  font-family: "Courgette", serif;
+  font-size: 29.114px;
+  font-weight: 400;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
 
 @media (max-width: 325px) {
   
@@ -338,10 +352,12 @@
     display: none;
 
   }
-
   .carousel-indicators button {
     display: none;
   }
+  
+  
+  
 
 }
 
