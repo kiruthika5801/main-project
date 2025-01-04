@@ -10,7 +10,7 @@ function HeaderNav() {
     <div>
       <Container fluid>
         <Row className="bar">
-          <Col className="bar-out" md={9}>
+          <Col className="bar-out" md={10}>
             {/* Navbar with expand="lg" */}
             <Navbar expand="lg" className="mb-3">
               <Container fluid>
@@ -34,7 +34,7 @@ function HeaderNav() {
                       <Nav.Link as={Link} className='borde' to="#team">TEAM</Nav.Link>
                       <Dropdown>
                         <Dropdown.Toggle as={Nav.Link} className="borde dropdown-toggle">
-                          <Link to="#services" style={{ textDecoration: 'none', color: 'inherit' }}>
+                          <Link to="#services" style={{ textDecoration: 'none', color: 'inherit'}}>
                             SERVICES
                           </Link>
                         </Dropdown.Toggle>
