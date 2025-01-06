@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderNav from './component/HeaderNav';
 import Main from './component/Main';
 import Green from './component/Green';
+import Welcome from './component/Welcome';
 // import Copy from './component/Copy';
 
 
@@ -18,6 +19,7 @@ function App() {
       <HeaderNav/>
       <Main/>
       <Green/>
+      <Welcome/>
       {/* <Copy/> */}
       
      
