@@ -11,12 +11,12 @@ function Green() {
         <div>
             <Container fluid >
                 <Row className="justify-content-md-center green ">
-                    <Col className='greenOne' xs lg="5">
+                    <Col className='greenOne' xs lg="6" >
                     ORDER Full Package Plan & Get -25% discount!
 
                     </Col>
                     <Col className='greenTwo' xs lg="2">
-                       <button>send request</button>
+                       <button className='green-btn'>SEND REQUEST</button>
                     </Col>
                 </Row>
                 
