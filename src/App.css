@@ -277,7 +277,7 @@
 /* welcome */
 .box{
   background-color:cadetblue;
-  height: 600px;
+  height: 900px;
 }
 
 .gap col{
@@ -288,13 +288,15 @@
 }
 .w-head{
   background-color: antiquewhite;
-  height: 60px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items:end;
 }
 .wel-one{
   font-family: "Courgette", serif;
   font-size: 35px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   
 }
 .wel-two{
@@ -302,6 +304,7 @@
   font-size: 11.998px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .w-para{
   background-color:burlywood;
@@ -309,10 +312,51 @@
   
 }
 .w-divider{
-  background-color: blue;
+  background-color:lightgrey;
   height: 70px;
 }
+.d-images {
+  width: 200px;
+  height: 25px;
+}
+/* card */
+.cardBox{
+  background-color:bisque;
+  height: 500px;
+}
+.card-img{
+  width: 370px;
+  height: 240px;
+  outline: 4px solid white;
+  outline-offset: -15px;
+}
+.card-head{
+  font-family: "Courgette", serif;
+  font-size: 20.006px !important;
+ height: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: end;
 
+}
+.card-btn{
+  width: 50%;
+  font-size: 11.998px !important;
+  height: 60px;
+  margin-left: 70px;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+}
+.btn{
+  --bs-btn-border-radius:0 !important;
+ background-color: #cbb9a6 !important;
+ --bs-btn-border-color:transparent !important;
+}
+.card-white{
+   width: 100%;
+   height: 450px;
+
+}
 
 
 
@@ -440,6 +484,24 @@
     font-size: 10.284px;
     letter-spacing: 1px;
   }
+  .wel-one{
+    font-size: 24px;
+  }
+  .wel-two{
+    font-size: 10.284px;
+  }
+  .box{
+height: 1585px;
+display: flex;
+justify-content: center;
+  }
+  
+  .cardBox{
+height: 1300px;
+  }
+  
+  
+  
   
   
   
@@ -558,6 +620,30 @@
   .greenOne{
     font-size: 21.998px;
   }
+  /* welcome */
+
+  .wel-one{
+    font-size: 25.2px;
+  }
+  .card-btn{
+    margin-left: 20px;
+    width: 80%;
+  }
+  .card-img{
+    width: 215px;
+    height: 140px;
+  }
+ .Card-white{
+    height: 300px;
+  }
+  .cardBox{
+    height: 345px;
+
+  }
+  .box{
+    height: 650px;
+  }
+  
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -580,5 +666,20 @@
   }
   .greenOne{
     font-size: 21.994px;
+  }
+  .card-btn{
+    margin-left: 20px;
+    width: 80%;
+  }
+  .card-img{
+    width: 100%;
+    height: 150px;
+  }
+  .cardBox{
+    height: 345px;
+
+  }
+  .box{
+    height: 650px;
   }
 }
