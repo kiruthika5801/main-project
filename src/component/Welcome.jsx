@@ -17,7 +17,7 @@ function Welcome() {
             <Container fluid >
 
                 <Row className="justify-content-md-center box ">
-                    <Col className='wel-main' xs={8} lg={11} md={11} >
+                    <Col className='wel-main' xs={9} lg={11} md={12} >
                         <Row className='w-head'>
                             <Col lg={12} xs={10} className='wel-one'>Let's Plan Your Perfect Wedding</Col>
                         </Row>

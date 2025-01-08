@@ -236,12 +236,14 @@
 .carousel-indicators {
   bottom: 80px !important;
 }
+
 /* green */
-.green{
-  background-color:#88915c;
+.green {
+  background-color: #88915c;
   height: 160px;
 }
-.greenOne{
+
+.greenOne {
   /* background-color: aqua; */
   font-family: "Courgette", serif;
   font-size: 29.114px;
@@ -251,135 +253,158 @@
   align-items: center;
   justify-content: center;
 }
-.greenTwo{
+
+.greenTwo {
   /* background-color: cadetblue; */
   display: flex;
   align-items: center;
- 
-  
+
+
 }
-.green-btn{
+
+.green-btn {
   font-family: "PT Serif", serif;
   background-color: #88915c;
   font-size: 11.998px;
   letter-spacing: 3px;
   border: 3px solid white !important;
-  color:white;
+  color: white;
   width: 100%;
   height: 70px;
 }
-.green-btn:hover{
+
+.green-btn:hover {
   background-color: white;
   font-weight: 600;
-  color: #88915c ;
+  color: #88915c;
 }
 
 /* welcome */
-.box{
-  background-color:cadetblue;
-  height: 900px;
+.box {
+  /* background-color: cadetblue; */
+  height: 740px;
 }
 
-.gap col{
+.gap col {
   background-color: transparent;
 }
-.wel-main{
-  background-color: aqua;
+
+.wel-main {
+  /* background-color: aqua; */
 }
-.w-head{
-  background-color: antiquewhite;
+
+.w-head {
+  /* background-color: antiquewhite; */
   height: 180px;
   display: flex;
   justify-content: center;
-  align-items:end;
+  align-items: end;
 }
-.wel-one{
+
+.wel-one {
   font-family: "Courgette", serif;
   font-size: 35px;
   text-align: center;
-  
+
 }
-.wel-two{
-  font-family:"PT Serif", serif ;
+
+.wel-two {
+  font-family: "PT Serif", serif;
   font-size: 11.998px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.w-para{
-  background-color:burlywood;
+
+.w-para {
+  /* background-color: burlywood; */
   height: 30px;
-  
+
 }
-.w-divider{
-  background-color:lightgrey;
+
+.w-divider {
+  /* background-color: lightgrey; */
   height: 70px;
 }
+
 .d-images {
   width: 200px;
   height: 25px;
 }
+
 /* card */
-.cardBox{
-  background-color:bisque;
-  height: 500px;
+.cardBox {
+  /* background-color: bisque; */
+  height: 440px;
 }
-.card-img{
+
+.card-img {
   width: 370px;
   height: 240px;
   outline: 4px solid white;
   outline-offset: -15px;
 }
-.card-head{
+
+.card-head {
   font-family: "Courgette", serif;
   font-size: 20.006px !important;
- height: 50px;
- display: flex;
- justify-content: center;
- align-items: end;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 
 }
-.card-btn{
+
+.card-btn {
   width: 50%;
   font-size: 11.998px !important;
   height: 60px;
-  margin-left: 70px;
+  margin-left: 100px;
   letter-spacing: 3px;
   word-spacing: 2px;
 }
-.btn{
-  --bs-btn-border-radius:0 !important;
- background-color: #cbb9a6 !important;
- --bs-btn-border-color:transparent !important;
+
+.btn {
+  --bs-btn-border-radius: 0 !important;
+  background-color: #cbb9a6 !important;
+  --bs-btn-border-color: transparent !important;
+  
 }
-.card-white{
-   width: 100%;
-   height: 450px;
-
+.btn:hover{
+  background-color: #88915c !important;
+  border: none;
 }
 
+.card-white {
+  width: 100%;
+  height: 450px;
 
+}
+.card{
+  border: none;
+}
 
 @media (max-width: 325px) {
-  
+
 
   .navbar-toggler-icon {
     position: absolute;
     right: 40px;
     bottom: 0;
   }
-  
-  
+
+
 }
 
 @media (max-width: 376px) {
   .bar-out {
-    left: 210px !important ;
+    left: 210px !important;
   }
-  .greenOne{
-    width: 75% !important; 
+
+  .greenOne {
+    width: 75% !important;
   }
-  
+
 }
 
 
@@ -467,44 +492,55 @@
     display: none;
 
   }
+
   .carousel-indicators button {
     display: none;
   }
+
   /* green */
-  
-  .greenOne{
+
+  .greenOne {
     font-size: 18.852px;
-   margin: 0 auto;
-   text-align: center;
+    margin: 0 auto;
+    text-align: center;
   }
-  .greenTwo{
+
+  .greenTwo {
     margin: 0 auto;
   }
-  .green-btn{
+
+  .green-btn {
     font-size: 10.284px;
     letter-spacing: 1px;
   }
-  .wel-one{
+
+  .wel-one {
     font-size: 24px;
   }
-  .wel-two{
+
+  .wel-two {
     font-size: 10.284px;
   }
-  .box{
-height: 1585px;
-display: flex;
-justify-content: center;
+
+  .box {
+    height: 1585px;
+    display: flex;
+    justify-content: center;
   }
-  
-  .cardBox{
-height: 1300px;
+
+  .cardBox {
+    height: 1300px;
   }
-  
-  
-  
-  
-  
-  
+
+  .card-btn {
+    margin-left: 60px;
+  }
+
+
+
+
+
+
 
 }
 
@@ -617,33 +653,39 @@ height: 1300px;
   }
 
   /* green */
-  .greenOne{
+  .greenOne {
     font-size: 21.998px;
   }
+
   /* welcome */
 
-  .wel-one{
+  .wel-one {
     font-size: 25.2px;
   }
-  .card-btn{
+
+  .card-btn {
     margin-left: 20px;
     width: 80%;
   }
-  .card-img{
+
+  .card-img {
     width: 215px;
     height: 140px;
   }
- .Card-white{
+
+  .Card-white {
     height: 300px;
   }
-  .cardBox{
+
+  .cardBox {
     height: 345px;
 
   }
-  .box{
+
+  .box {
     height: 650px;
   }
-  
+
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -664,22 +706,27 @@ height: 1300px;
     height: 20px;
 
   }
-  .greenOne{
+
+  .greenOne {
     font-size: 21.994px;
   }
-  .card-btn{
+
+  .card-btn {
     margin-left: 20px;
     width: 80%;
   }
-  .card-img{
+
+  .card-img {
     width: 100%;
     height: 150px;
   }
-  .cardBox{
+
+  .cardBox {
     height: 345px;
 
   }
-  .box{
+
+  .box {
     height: 650px;
   }
 }
