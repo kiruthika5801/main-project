@@ -31,14 +31,13 @@ function Welcome() {
                                 <Card className='card-white '>
                                     <div className=' card-img  card-imgOne'>
                                         <div className='linkHover'>
-                                        <HiLink  className="linkIcon"/>
-
+                                            <HiLink className="linkIcon" />
                                         </div>
-                                    <Card.Img  variant="top"
-                                    />
+                                        <Card.Img variant="top"
+                                        />
 
                                     </div>
-                                    
+
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Bouquets & Style</Card.Title>
 
@@ -49,7 +48,7 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
                                     <Card.Img className='card-img card-imgTwo' variant="top" />
-                                    
+
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Wedding Planning</Card.Title>
 
