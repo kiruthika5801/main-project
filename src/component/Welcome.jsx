@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import dividers from "../images/divider_title.png";
-import imgOne from "../images/img1-370x240.jpg";
-import imgTwo from "../images/img2-370x240.jpg";
-import imgThree from "../images/img3-370x240.jpg";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { HiLink } from "react-icons/hi";
 import "../App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -28,33 +26,43 @@ function Welcome() {
                             <Col className='d-flex justify-content-center align-items-center' ><img className='d-images' src={dividers} alt="divider-title" /></Col>
                         </Row>
                         <Row className='cardBox'>
-                           
+
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white '>
-                                    <Card.Img className='card-img' variant="top" src={imgOne} />
+                                    <div className=' card-img  card-imgOne'>
+                                        <div className='linkHover'>
+                                        <HiLink  className="linkIcon"/>
+
+                                        </div>
+                                    <Card.Img  variant="top"
+                                    />
+
+                                    </div>
+                                    
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Bouquets & Style</Card.Title>
-                                       
+
                                         <Button className='card-btn mt-4' >ORDER NOW</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
-                                    <Card.Img className='card-img' variant="top" src={imgTwo} />
+                                    <Card.Img className='card-img card-imgTwo' variant="top" />
+                                    
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Wedding Planning</Card.Title>
-                                       
+
                                         <Button className='card-btn mt-4' >SHOP NOW</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
-                                    <Card.Img className='card-img' variant="top" src={imgThree} />
+                                    <Card.Img className='card-img card-imgThree' variant="top" />
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Catering & Decoration</Card.Title>
-                                       
+
                                         <Button className='card-btn mt-4' >SHOP NOW</Button>
                                     </Card.Body>
                                 </Card>

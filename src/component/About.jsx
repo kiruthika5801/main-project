@@ -2,12 +2,9 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Carousel from 'react-bootstrap/Carousel';
 import aboutOne from '../images/about-img1.jpg'
-
 import aboutTwo from "../images/about-img2.jpg"
 import aboutThree from "../images/about-img-3.jpg"
 import dividers from "../images/divider_title.png"
-
-
 import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -46,7 +43,7 @@ function About() {
                                     <Carousel.Item>
                                         <img
                                             src={aboutOne}
-                                            alt="first slide"
+                                            alt="Wedding Ceremony"
                                             className="about-image"
                                         />
 
@@ -54,7 +51,7 @@ function About() {
                                     <Carousel.Item>
                                         <img
                                             src={aboutTwo}
-                                            alt="second slide"
+                                            alt="Reception Venue"
                                             className="about-image"
                                         />
 
@@ -64,7 +61,7 @@ function About() {
                                     <Carousel.Item>
                                         <img
                                             src={aboutThree}
-                                            alt="third slide"
+                                            alt="Decor and Floral Arrangements"
                                             className="about-image"
                                         />
 

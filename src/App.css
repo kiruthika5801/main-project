@@ -333,7 +333,39 @@
 .d-images {
   width: 200px;
   height: 25px;
+  
 }
+.linkHover{
+  width: 100px;
+  height:100px;
+  border-radius: 70px;
+  position: absolute;
+  top: 70px;
+  left:160px;
+  text-align: center;
+  padding-top: 10px;
+ background-color: rgba(0,0,0,0.5);
+  visibility: hidden; 
+  z-index:  11;
+  
+}
+.card-imgOne:hover .linkHover{
+  visibility: visible;  
+}
+.card-imgOne:hover{
+  background-color:#928b84;
+  filter: brightness(0.6); /* Darken the background by 40% */
+  opacity: 0.8; /* Apply 80% opacity to the entire element */
+}
+
+.linkIcon{
+  width: 50%;
+  height:80px ;
+  color: white;
+  z-index: 11;
+  
+}
+
 
 /* card */
 .cardBox {
@@ -346,12 +378,31 @@
   height: 240px;
   outline: 4px solid white;
   outline-offset: -15px;
+ 
+}
+.card-imgOne {
+  background-image: url(./images/img1-370x240.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+  
+
+}
+.card-imgTwo{
+  background-image: url(./images/img2-370x240.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-imgThree{
+  background-image: url(./images/img3-370x240.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* .card-img:hover{
-  background-color: rgb(0, 0, 0);
-  opacity: 70%;
-} */
+
 
 .card-head {
   font-family: "Courgette", serif;
