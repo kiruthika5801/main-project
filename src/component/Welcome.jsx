@@ -47,7 +47,15 @@ function Welcome() {
                             </Col>
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
-                                    <Card.Img className='card-img card-imgTwo' variant="top" />
+                                    <div className=' card-img  card-imgTwo'>
+                                        <div className='linkHover'>
+                                            <HiLink className="linkIcon" />
+                                        </div>
+                                        <Card.Img variant="top"
+                                        />
+
+                                    </div>
+                                    {/* <Card.Img className='card-img card-imgTwo' variant="top" /> */}
 
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Wedding Planning</Card.Title>
@@ -58,7 +66,15 @@ function Welcome() {
                             </Col>
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
-                                    <Card.Img className='card-img card-imgThree' variant="top" />
+                                    <div className=' card-img  card-imgThree'>
+                                        <div className='linkHover'>
+                                            <HiLink className="linkIcon" />
+                                        </div>
+                                        <Card.Img variant="top"
+                                        />
+
+                                    </div>
+                                    {/* <Card.Img className='card-img card-imgThree' variant="top" /> */}
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Catering & Decoration</Card.Title>
 
