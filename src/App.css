@@ -398,7 +398,7 @@
 
 /* card */
 .cardBox {
-  /* background-color: bisque; */
+  background-color: bisque;
   height: 440px;
 }
 
@@ -579,7 +579,25 @@
   background-color: #cbb9a6;
 
 }
-
+/* content */
+.content{
+  background-color:aqua;
+  height: 450px;
+  display: flex;
+  align-items: center;
+}
+.content-main{
+  background-color:#a3ad6f;
+  height: 250px;
+}
+.content-box{
+  background-color: bisque;
+  height: 250px;
+}
+.content-white{
+  width: 100%;
+  height: 240px;
+}
 
 
 
