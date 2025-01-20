@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import dividers from "../images/divider_title.png";
 import Button from 'react-bootstrap/Button';
@@ -10,14 +10,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 function Welcome() {
+
     return (
+
         <div>
             <Container fluid >
 
                 <Row className="justify-content-md-center box ">
                     <Col className='wel-main' xs={9} lg={11} md={12} >
                         <Row className='w-head'>
-                            <Col lg={12} xs={10} className='wel-one'>Let's Plan Your Perfect Wedding</Col>
+                            <Col   lg={12} xs={10} className='wel-one'> Let's Plan Your Perfect Wedding</Col>
                         </Row>
                         <Row className='w-para'>
                             <Col lg={12} xs={12} className='wel-two'>welcome</Col>
@@ -39,7 +41,7 @@ function Welcome() {
                                     </div>
 
                                     <Card.Body className='pt-4'>
-                                        <Card.Title className='card-head'>Bouquets & Style</Card.Title>
+                                        <Card.Title className='card-head'> Bouquets & Style</Card.Title>
 
                                         <Button className='card-btn mt-4' >ORDER NOW</Button>
                                     </Card.Body>
@@ -96,5 +98,7 @@ function Welcome() {
         </div>
 
     )
+
 };
+
 export default Welcome;
