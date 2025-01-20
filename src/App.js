@@ -7,6 +7,7 @@ import Main from './component/Main';
 import Green from './component/Green';
 import Welcome from './component/Welcome';
 import About from './component/About';
+import Box from './component/Box';
 // import Copy from './component/Copy';
 
 
@@ -22,6 +23,7 @@ function App() {
       <Green/>
       <Welcome/>
       <About/>
+      <Box/>
       {/* <Copy/> */}
       
      
