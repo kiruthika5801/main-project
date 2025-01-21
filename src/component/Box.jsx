@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { PiTruckTrailer } from "react-icons/pi";
+import { FaRegHandshake } from "react-icons/fa6";
+import { GiFlowerPot } from "react-icons/gi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -15,45 +18,53 @@ function Box() {
                 <Row className="justify-content-md-center content">
                     <Col xs className="content-main" lg="9">
                         <Row className="contentBox">
-                            <Col>
-                                <Card className="content-white">
-                                    <Card.Img variant="top" src="holder.js/100px180" />
+                            <Col lg={4} >
+                                <Card className="content-white  ">
+                                    <div className="content-up">
+                                        <div className="content-icon">
+                                            <PiTruckTrailer className="c-Icon" />
+
+                                        </div>
+                                    </div>
+
                                     <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
+                                        <Card.Title className="content-title"><h1 className="content-head">Free Delivery</h1></Card.Title>
+                                        <Card.Text className="content-para"><p className="content-para">on every order, during the same day</p></Card.Text>
                                     </Card.Body>
                                 </Card>
 
                             </Col>
-                            <Col>
-                            <Card className="content-white">
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
+                            <Col lg={4} >
+                                <Card className="content-white  ">
+                                    <div className="content-up">
+                                        <div className="content-icon">
+                                            <FaRegHandshake className="c-Icon" />
+
+                                        </div>
+                                    </div>
+
+                                    <Card.Body>
+                                        <Card.Title className="content-title"><h1 className="content-head">Hand - Tied</h1></Card.Title>
+                                        <Card.Text className="content-para"><p className="content-para">bouquets and beautiful plants</p></Card.Text>
+                                    </Card.Body>
+                                </Card>
+
                             </Col>
-                            <Col>
-                            <Card className="content-white">
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
+                            <Col lg={4} >
+                                <Card className="content-white  ">
+                                    <div className="content-up">
+                                        <div className="content-icon">
+                                            <GiFlowerPot  className="c-Icon" />
+
+                                        </div>
+                                    </div>
+
+                                    <Card.Body>
+                                        <Card.Title className="content-title"><h1 className="content-head">Exclusive Design</h1></Card.Title>
+                                        <Card.Text className="content-para"><p className="content-para">by the best florist from NYC</p></Card.Text>
+                                    </Card.Body>
+                                </Card>
+
                             </Col>
 
                         </Row>
