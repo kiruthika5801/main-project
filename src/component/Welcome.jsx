@@ -17,7 +17,7 @@ function Welcome() {
             <Container fluid >
 
                 <Row className="justify-content-md-center box ">
-                    <Col className='wel-main' xs={9} lg={11} md={12} >
+                    <Col className='wel-main' lg={11} md={11} xs={9}>
                         <Row className='w-head'>
                             <Col   lg={12} xs={10} className='wel-one'> Let's Plan Your Perfect Wedding</Col>
                         </Row>
@@ -29,12 +29,12 @@ function Welcome() {
                         </Row>
                         <Row className='cardBox'>
 
-                            <Col lg={4} md={4} sm={4}>
+                            <Col lg={4} md={4} sm={4} >
                                 <Card className='card-white '>
                                     <div className=' card-img  card-imgOne'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
@@ -50,14 +50,14 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
                                     <div className=' card-img  card-imgTwo'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
                                     </div>
-                                    {/* <Card.Img className='card-img card-imgTwo' variant="top" /> */}
+                                    
 
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Wedding Planning</Card.Title>
@@ -69,14 +69,14 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
                                     <div className=' card-img  card-imgThree'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
                                     </div>
-                                    {/* <Card.Img className='card-img card-imgThree' variant="top" /> */}
+                                   
                                     <Card.Body className='pt-4'>
                                         <Card.Title className='card-head'>Catering & Decoration</Card.Title>
 

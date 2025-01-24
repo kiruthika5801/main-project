@@ -280,6 +280,8 @@
 }
 
 /* welcome */
+
+
 .box {
   /* background-color: cadetblue; */
   height: 740px;
@@ -290,7 +292,7 @@
 }
 
 .wel-main {
-  /* background-color: aqua; */
+  /* background-color: aqua;  */
 }
 
 .w-head {
@@ -299,13 +301,12 @@
   display: flex;
   justify-content: center;
   align-items: end;
+ 
 }
-
 .wel-one {
   font-family: "Courgette", serif;
   font-size: 35px;
   text-align: center;
-
 }
 
 .wel-two {
@@ -316,13 +317,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .w-para {
   /* background-color: burlywood; */
   color: #928b84;
   height: 30px;
-
+ 
 }
 
 .w-divider {
@@ -398,6 +400,7 @@
 
 /* card */
 .cardBox {
+ 
   /* background-color: bisque; */
   height: 440px;
 }
@@ -581,33 +584,28 @@
 }
 /* content */
 .content{
-  background-color:aqua;
-  height: 450px;
+  /* background-color:aqua; */
+  height: 375px;
   display: flex;
   align-items: center;
 }
 .content-main{
-  /* background-color:#928b84; */
-  background-color:#c6c6d4;
-  height: 262px;
+  /* background-color:#969797; */
+  /* background-color: brown; */
+  height: 180px;
 }
 .content-box{
   background-color: bisque;
   height: 250px;
 }
 .contentBox{
-  background-color: beige;
-  height:255px;
+  background-color:#c1c1bc;
+  height:180px;
   display: flex;
   align-items: end;
   
 }
-.content-main .row>*{
- padding: 0 !important;
-}
-.contentBox .row>*{
-  margin: 0 !important;
-}
+
 .content-up{
   background-color: brown;
   position: relative;
@@ -649,12 +647,16 @@
   height: 70px;
   /* background-color: chocolate; */
   width: 100%;
+  text-align: center;
 }
 .c-Icon{
   color: white;
   width:40px;
   height: 40px;
   
+}
+ .card{
+  --bs-card-bg:transparent !important;
 }
 
 
@@ -856,6 +858,24 @@
   .a-btnn {
     width: 70%;
   }
+  .content{
+    height: 776px;
+    align-items: start;
+    justify-content: center;
+  }
+  .content-main{
+    height: 770px;
+    display: flex;
+    align-items: center;
+  }
+  .contentBox{
+  height:620px;
+  }
+  .content-icon{
+    left: 95px;
+  }
+  
+  
 
 
 
@@ -980,14 +1000,15 @@
   }
 
   /* welcome */
+  
 
   .wel-one {
     font-size: 25.2px;
   }
 
   .card-btn {
-    margin-left: 20px;
-    width: 80%;
+    margin-left: 20px; 
+     width: 80%;
   }
 
   .card-img {
@@ -1005,7 +1026,10 @@
   }
 
   .box {
+    margin: 0;
+    padding: 0;
     height: 650px;
+    /* width: 100%; */
   }
 
   .about-image {
@@ -1014,6 +1038,9 @@
 
   .a-paraOne {
     font-size: 30.234px;
+  }
+  .content-icon{
+    left:55px;
   }
 
 }
@@ -1068,6 +1095,9 @@
   .about-image {
 
     height: 380px;
+  }
+  .content-icon{
+    left:62px;
   }
 
 }
