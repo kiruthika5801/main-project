@@ -658,6 +658,15 @@
  .card{
   --bs-card-bg:transparent !important;
 }
+/* shop */
+.shop{
+  background-color: aqua;
+  height: 1500px;
+}
+.shopBox{
+  background-color: beige;
+  height: 1200px;
+}
 
 
 
