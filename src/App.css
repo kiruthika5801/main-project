@@ -661,12 +661,40 @@
 /* shop */
 .shop{
   background-color: aqua;
-  height: 1500px;
+  height: 1600px;
 }
 .shopBox{
   background-color: beige;
-  height: 1200px;
+  height: 1300px;
 }
+
+.cardShop-img {
+  width: 369.99px;
+  height: 410.33px;
+}
+.cardShop-title{
+  font-size: 18.004px ;
+  font-family: "Courgette", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+.cardShop-price{
+   color: #88915c !important;
+  display: flex;
+  justify-content: center;
+}
+.shopBtn{
+  font-size: 11.88px !important;
+  padding: 15px !important;
+  letter-spacing: 3px !important;
+  font-weight:700 !important;
+  
+}
+
+
+
 
 
 
