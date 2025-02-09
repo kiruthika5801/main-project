@@ -296,7 +296,7 @@
 }
 
 .w-head {
-  /* background-color: antiquewhite; */
+  /* background-color:brown; */
   height: 180px;
   display: flex;
   justify-content: center;
@@ -400,8 +400,7 @@
 
 /* card */
 .cardBox {
- 
-  /* background-color: bisque; */
+  background-color: bisque;
   height: 440px;
 }
 
@@ -440,6 +439,7 @@
 
 
 .card-head {
+  /* background-color: chartreuse; */
   font-family: "Courgette", serif;
   font-size: 20.006px !important;
   height: 50px;
@@ -656,46 +656,103 @@
   
 }
  .card{
-  --bs-card-bg:transparent !important;
+  /* --bs-card-bg:transparent !important; */
 }
 /* shop */
 .shop{
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 1600px;
+  display: flex;
+  justify-content: center;
 }
-.shopBox{
-  background-color: beige;
-  height: 1300px;
+.shop-main{
+  /* background-color:beige; */
+  height: 1590px;
+  
+
+}
+.shop-boxOne{
+  /* background-color: cadetblue; */
+  height: 640px;
 }
 
-.cardShop-img {
-  width: 369.99px;
-  height: 410.33px;
+.shop-boxTwo{
+  /* background-color:burlywood; */
+  height: 640px;
 }
-.cardShop-title{
-  font-size: 18.004px ;
-  font-family: "Courgette", serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-.cardShop-price{
-   color: #88915c !important;
-  display: flex;
-  justify-content: center;
-}
-.shopBtn{
-  font-size: 11.88px !important;
-  padding: 15px !important;
-  letter-spacing: 3px !important;
-  font-weight:700 !important;
+
+.card-sImg{
+  width: 369px;
+  height: 409px;
+  overflow: hidden;
   
 }
+.card-sImg img{
+  object-fit: cover;
+
+}
+.card-sImgOne{
+  background-image: url(./images/product1-706x783.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
+.card-sImgThree{
+  background-image: url(./images/product3-706x783.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-sImgTwo{
+  background-image: url(./images/product2-706x783.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-sImgFour{
+  background-image: url(./images/product4-706x783\ \(1\).jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-sImgFive{
+  background-image: url(./images/product5-555x615.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card-sImgSix{
+  background-image: url(./images/product6-555x615.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 
-
-
+.card-price{
+  color: #88915c;
+  font-weight: 600;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-sWhite {
+  width: fit-content; /* Adjust to the image size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-shopbtn {
+ 
+  font-size: 11.998px !important;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+}
 
 
 
@@ -911,12 +968,25 @@
   .content-icon{
     left: 95px;
   }
+  /* shop */
+  .shop{
+    height: 3550px;
+  }
+  .shop-main{
+    height: 3510px;
+   
+  }
+  .shop-boxOne{
+    height: 1580px;
+  }
+  .shop-boxTwo{
+    height: 1620px;
+  }
+  .card-sImg{
+    width: 280px;
+    height: 310px; 
+  }
   
-  
-
-
-
-
 
 
 
@@ -1079,6 +1149,25 @@
   .content-icon{
     left:55px;
   }
+  /* shop */
+  .card-sImg{
+    width: 215px;
+    height: 239px; 
+  }
+  .shop-boxOne{
+    height: 480px;
+  }
+  .shop-boxTwo{
+    height: 490px;
+  }
+  .shop-main{
+    height: 1280px;
+  }
+  .shop{
+    height: 1300px;
+  }
+  
+  
 
 }
 
@@ -1136,5 +1225,18 @@
   .content-icon{
     left:62px;
   }
+  .card-sImg{
+    width: 303px;
+    height: 336px; 
+  }
+  .shop-main{
+    width: 97% !important;
+    height:1590px;
+  }
+  
+
+  
+  
+  
 
 }
