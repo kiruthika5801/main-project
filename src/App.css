@@ -400,7 +400,7 @@
 
 /* card */
 .cardBox {
-  background-color: bisque;
+  /* background-color: bisque; */
   height: 440px;
 }
 
@@ -661,24 +661,37 @@
 /* shop */
 .shop{
   /* background-color: aqua; */
-  height: 1600px;
+  height: 1660px;
   display: flex;
   justify-content: center;
 }
 .shop-main{
   /* background-color:beige; */
-  height: 1590px;
+  height: 1650px;
   
 
 }
 .shop-boxOne{
   /* background-color: cadetblue; */
   height: 640px;
+  margin-bottom: 60px;
 }
+
+
 
 .shop-boxTwo{
   /* background-color:burlywood; */
   height: 640px;
+}
+.card-Shead {
+  /* background-color: chartreuse; */
+  font-family: "Courgette", serif;
+  font-size: 18.004px !important;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
 }
 
 .card-sImg{
@@ -745,7 +758,7 @@
   align-items: center;
 }
 .card-shopbtn {
- 
+ width: 100%;
   font-size: 11.998px !important;
   height: 60px;
   display: flex;
@@ -753,6 +766,11 @@
   letter-spacing: 3px;
   word-spacing: 2px;
 }
+/* inspiration */
+.insImage{
+  
+}
+
 
 
 
@@ -973,7 +991,7 @@
     height: 3550px;
   }
   .shop-main{
-    height: 3510px;
+    height: 3545px;
    
   }
   .shop-boxOne{
@@ -1161,10 +1179,10 @@
     height: 490px;
   }
   .shop-main{
-    height: 1280px;
+    height: 1325px;
   }
   .shop{
-    height: 1300px;
+    height: 1330px;
   }
   
   
@@ -1231,7 +1249,7 @@
   }
   .shop-main{
     width: 97% !important;
-    height:1590px;
+    height:1650px;
   }
   
 
