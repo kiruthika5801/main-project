@@ -20,7 +20,7 @@ function Shop() {
         <Container fluid>
             <Row className="justify-content-md-center shop">
                 <Col lg={10} md={11} sm={9} xs={9} className="shop-main">
-                    <Row className="w-head">
+                    <Row className="shop-head">
                         <Col className="wel-one">Shop Our Latest Styles</Col>
                     </Row>
                     <Row className="w-para">

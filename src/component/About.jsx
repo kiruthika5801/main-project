@@ -16,12 +16,12 @@ function About() {
                 <Row className="justify-content-md-center about">
                     <Col xs={9} md={11} lg={10}   className="about-main">
                         <Row>
-                            <Col className="a-one" lg={8} md={7} xs={12}>
+                            <Col className="a-one" lg={7} md={7} xs={12}>
                                 <Row className="a-head">
                                     <Col className="a-headOne">ABOUT US</Col>
                                 </Row>
                                 <Row className="a-para">
-                                    <Col className="a-paraOne" lg={12}  md={12}  xs={12}>We Plan & Design Weddings <br />
+                                    <Col className="a-paraOne" lg={12}  md={12}  xs={12}>We Plan & Design Weddings <br/>
                                     That Capture the Imagination</Col>
                                 </Row>
                                 <Row className="a-head d-flex align-items-center">
@@ -38,7 +38,7 @@ function About() {
 
 
                             </Col>
-                            <Col className="a-two" lg={4} md={5} xs={12}>
+                            <Col className="a-two" lg={5} md={5} xs={12}>
                                 <Carousel>
                                     <Carousel.Item>
                                         <img
