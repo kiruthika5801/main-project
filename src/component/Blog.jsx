@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col,Link } from 'react-bootstrap';
+import { Container, Row, Col, Link } from 'react-bootstrap';
 import dividers from "../images/divider_title.png";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -13,7 +13,7 @@ function Blog() {
         <div>
             <Container fluid >
                 <Row className="justify-content-md-center blog-box ">
-                    <Col className='blog-main' lg={11}  md={11} xs={9} >
+                    <Col className='blog-main' lg={11} md={11} xs={9} >
                         <Row className='w-head'>
                             <Col lg={12} xs={10} className='wel-one'> Articles from the Blog</Col>
                         </Row>
@@ -36,12 +36,12 @@ function Blog() {
                                     </div>
 
                                     <Card.Body className='pt-4'>
-                                    <Card.Link className='card-paraOne' href="#">Jul 27, 2016</Card.Link>
-                                    <Card.Title className='card-paraTwo'>An occasion that joins two hearts in a symphony</Card.Title>
-                                    <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 3 comments</span></Card.Title>
+                                        <Card.Link className='card-paraOne' href="#">Jul 27, 2016</Card.Link>
+                                        <Card.Title className='card-paraTwo'>An occasion that joins two hearts in a symphony</Card.Title>
+                                        <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 3 comments</span></Card.Title>
 
 
-                                      
+
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -58,12 +58,12 @@ function Blog() {
 
 
                                     <Card.Body className='pt-4'>
-                                    <Card.Link className='card-paraOne' href="#">Jul 18, 2016</Card.Link>
-                                    <Card.Title className='card-paraTwo'>The role of your bouquette in wedding compositions</Card.Title>
-                                    <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 1 comments</span></Card.Title>
-                                        
+                                        <Card.Link className='card-paraOne' href="#">Jul 18, 2016</Card.Link>
+                                        <Card.Title className='card-paraTwo'>The role of your bouquette in wedding compositions</Card.Title>
+                                        <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 1 comments</span></Card.Title>
 
-                                        
+
+
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -79,16 +79,19 @@ function Blog() {
                                     </div>
 
                                     <Card.Body className='pt-4'>
-                                    <Card.Link className='card-paraOne' href="#">Jul 9, 2016</Card.Link>
-                                    <Card.Title className='card-paraTwo'>10 reasons why you should hire a wedding planner</Card.Title>
-                                    <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 2 comments</span></Card.Title>
+                                        <Card.Link className='card-paraOne' href="#">Jul 9, 2016</Card.Link>
+                                        <Card.Title className='card-paraTwo'>10 reasons why you should hire a wedding planner</Card.Title>
+                                        <Card.Title className='card-paraThree'><span className='last'>By <Card.Link className='last' href="#">Cindy Jefferson  </Card.Link></span><span className='last'>  | 2 comments</span></Card.Title>
 
 
-                                        
+
                                     </Card.Body>
                                 </Card>
                             </Col>
 
+                        </Row>
+                        <Row className="a-btn" >
+                            <Col className='blog-btnn'> <button className="blog-inBtn">MORE POST</button></Col>
                         </Row>
 
                     </Col>
