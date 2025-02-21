@@ -11,6 +11,8 @@ import About from './component/About';
 import Box from './component/Box';
 import Shop from './component/Shop';
 import Inspiration from './component/Inspiration';
+import Section from './component/Section';
+import Blog from './component/Blog';
 
 
 // import Copy from './component/Copy';
@@ -31,6 +33,8 @@ function App() {
       <Box/>
       <Shop/>
       <Inspiration/>
+      <Section/>
+      <Blog/>
       {/* <Copy/> */}
       
      
