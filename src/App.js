@@ -13,6 +13,7 @@ import Shop from './component/Shop';
 import Inspiration from './component/Inspiration';
 import Section from './component/Section';
 import Blog from './component/Blog';
+import Wedding from './component/Wedding';
 
 
 // import Copy from './component/Copy';
@@ -35,6 +36,7 @@ function App() {
       <Inspiration/>
       <Section/>
       <Blog/>
+      <Wedding/>
       {/* <Copy/> */}
       
      

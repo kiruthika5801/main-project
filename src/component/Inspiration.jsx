@@ -11,7 +11,7 @@ function Inspiration() {
             <Container fluid>
 
                 <Row className="ins-box">
-                    <Col className="ins-left " lg={6} md={6}>
+                    <Col className="ins-left" lg={6} md={6}>
                     </Col>
                     <Col className="ins-right" lg={6} md={6}>
                         <Row className="justify-content-md-center right-box">

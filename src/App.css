@@ -1038,6 +1038,64 @@
   background-color:#cbb9a6;
 
 }
+/* wedding */
+.wed{
+  /* background-color: aqua; */
+  height: 490px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wed-main{
+  /* background-color: beige; */
+  background-image: url(./images/wedding.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 490px;
+}
+.wedding-one{
+  /* background-color: burlywood; */
+  height: 150px;
+  display: flex;
+  align-items: end;
+  text-align: center;
+}
+.wedding-para{
+  font-size: 49.994px;
+  color: white;
+  font-family: "Courgette", serif;
+}
+.blog-outer{
+  /* background-color: beige; */
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.wed-sub{
+  /* background-color: cadetblue; */
+  height: 340px;
+  display: flex;
+  align-items: center;
+}
+.wed-inBtn{
+  width: 20%;
+  height: 70px;
+  background-color: #88915c;
+  font-family: "PT Serif", serif;
+  font-size: 11.998px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: white;
+  border: none;
+}
+.wed-inBtn:hover{
+  background-color:#cbb9a6;
+
+}
+
 
 
 
@@ -1406,6 +1464,19 @@
         width: 50%;
         height: 50px;
         font-size: 10.284px;
+      }
+      .wedding-one{
+        height: 265px;
+      }
+      .wedding-para{
+        font-size: 42.852px;  
+      }
+      .wed-inBtn{
+        font-size: 10.284px;
+        width: 65%;
+      }
+      .wed-sub{
+        height: 225px;
       }
 
       
@@ -1781,5 +1852,9 @@
   .card-paraOne{
     font-size: 11.8454px;
   }
+  .wed-inBtn {
+    width: 30%;
+  }
+  
   
 }
