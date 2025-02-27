@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col, Link } from 'react-bootstrap';
-import dividers from "../images/divider_title.png";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { HiLink } from "react-icons/hi";
 import "../App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';

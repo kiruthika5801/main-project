@@ -14,6 +14,10 @@ import Inspiration from './component/Inspiration';
 import Section from './component/Section';
 import Blog from './component/Blog';
 import Wedding from './component/Wedding';
+import Prices from './component/Prices';
+import Updates from './component/Updates';
+import Picture from './component/Picture';
+import Feedback from './component/Feedback';
 
 
 // import Copy from './component/Copy';
@@ -37,6 +41,11 @@ function App() {
       <Section/>
       <Blog/>
       <Wedding/>
+      <Prices/>
+      <Updates/>
+      <Picture/>
+      <Feedback/>
+      
       {/* <Copy/> */}
       
      
