@@ -1553,18 +1553,71 @@
   letter-spacing: 4px;
   color: white;
   border: none;
-
 }
-.footer{
-  background-color: aqua;
-  height: 6cqh;
+.thank {
+  background-color: darkcyan;
+  height: 600px;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.footer-main{
+
+.thank-main {
   background-color: beige;
   height: 500px;
 }
+.thankLogo{
+  background-color:lightgrey;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.logoThank{
+  width: 208px;
+  height: 81px;
+}
+.thankIcon{
+  background-color:burlywood;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-bottom:1px solid #8a8a8a;
+}
+.thankIn{
+  background-color:#928b84;
+  height: 120px;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.iconOuter{
+  background-color: #88915c;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  
+  
+}
+.iconInner{
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  /* position: absolute;
+  top: 15px;
+  left: 15px; */
+}
+
+
+
 
 
 

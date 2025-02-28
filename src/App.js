@@ -19,13 +19,7 @@ import Updates from './component/Updates';
 import Picture from './component/Picture';
 import Feedback from './component/Feedback';
 import Info from './component/Info';
-// import Footer from './component/Footer';
-
-
-// import Copy from './component/Copy';
-
-
-
+import Thank from './component/Thank';
 
 
 function App() {
@@ -47,14 +41,8 @@ function App() {
       <Updates/>
       <Picture/>
       <Feedback/>
-      <Info/>
-      {/* <Footer/> */}
-      
-      {/* <Copy/> */}
-      
-     
-     
-     
+      <Info/> 
+      <Thank/>
     </div>
   );
 }
