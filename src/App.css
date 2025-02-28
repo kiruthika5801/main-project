@@ -584,7 +584,7 @@
 
 /* content */
 .content {
-  /* background-color:aqua; */
+  background-color:aqua;
   height: 375px;
   display: flex;
   align-items: center;
@@ -596,19 +596,19 @@
 }
 
 .content-box {
-  background-color: bisque;
+  /* background-color: bisque; */
   height: 250px;
 }
 
 .contentBox {
-  background-color: #c1c1bc;
+  background-color: #f2f1f0;
   height: 180px;
   display: flex;
   align-items: end;
 }
 
 .content-up {
-  background-color: brown;
+  /* background-color: brown; */
   position: relative;
 }
 
@@ -1555,22 +1555,16 @@
   border: none;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.footer{
+  background-color: aqua;
+  height: 6cqh;
+  display: flex;
+  align-items: center;
+}
+.footer-main{
+  background-color: beige;
+  height: 500px;
+}
 
 
 
@@ -1588,7 +1582,8 @@
 
   /* box */
   .content-icon {
-    left: 60px !important;
+    left: 50px !important;
+    top: -60px !important;
   }
 
   /* inspiration */
@@ -1670,6 +1665,7 @@
   .pic-box {
     height: 335px !important;
   }
+  
 
 
 
@@ -2037,6 +2033,11 @@
     right: -6px;
   }
 
+  /* box */
+  .content-icon {
+    left: 90px;
+  }
+
   /* blog */
   .last {
     font-size: 9.996px;
@@ -2200,7 +2201,7 @@
     height: 63px;
     width: 70%;
   }
-
+  
 }
 
 /*  Tablets in portrait mode.  */
@@ -2370,7 +2371,7 @@
   }
 
   .content-icon {
-    left: 55px;
+    left: 75px;
   }
 
   /* shop */
@@ -2599,6 +2600,10 @@
     height: 336px;
   }
 
+  .content-main{
+    width: 90% !important;
+  }
+
   /* shop */
   .shop-main {
     width: 97% !important;
@@ -2734,6 +2739,11 @@
   .pic-box {
     height: 270px;
   }
+  .info-main{
+    width: 90% !important;
+
+  }
+  
 
 
 
