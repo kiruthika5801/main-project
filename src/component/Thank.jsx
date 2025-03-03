@@ -14,54 +14,43 @@ function Thank() {
         <div>
             <Container fluid>
                 <Row className="justify-content-md-center thank">
-                    <Col lg={10} md={11} sm={9} xs={9} className="thank-main">
+                    <Col lg={10} md={11} sm={9} xs={10} className="thank-main">
                         <Row className="thankLogo">
-                            <Col lg={12}><img className="logoThank" src={logo} alt="tie-tales" /></Col>
+                            <Col lg={12} md={12} xs={12}><img className="logoThank" src={logo} alt="tie-tales" /></Col>
                         </Row>
                         <Row className="thankIcon" >
-                            <Col className="thankIn" lg={4}>
+                            <Col className="thankIn" lg={4} md={6} xs={11}>
                                 <Row>
-                                    <Col lg={3}>
+                                    <Col lg={3} md={3} xs={3}>
                                         <div className="iconOuter">
                                             <TiSocialFacebook className="iconInner" />
                                         </div>
                                     </Col>
-                                    <Col lg={3} >
+                                    <Col lg={3} md={3} xs={3} >
                                         <div className="iconOuter">
                                             <FaTwitter className="iconInner" />
                                         </div>
                                     </Col>
-                                    <Col lg={3} >
+                                    <Col lg={3} md={3} xs={3} >
                                         <div className="iconOuter">
                                             <AiOutlineInstagram className="iconInner" />
                                         </div>
                                     </Col>
-                                    <Col lg={3} >
+                                    <Col lg={3} md={3} xs={3} >
                                         <div className="iconOuter">
                                             <FaGooglePlusG className="iconInner" />
                                         </div>
                                     </Col>
 
                                 </Row>
-
-
-
-
-
-
-
-
-
                             </Col>
                         </Row>
-                        <Row>
-                            <Col></Col>
+                        <Row className="line">
+                            <Col lg={12} md={12} xs={12}><hr /></Col>
                         </Row>
-
-
-
-
-
+                        <Row className="policy">
+                            <Col className="thankLast" lg={12} md={12} xs={12}><span>"ThemeREX © 2017 All Rights Reserved"</span><a className="lastThank" href="#">Terms of Use </a>and <a className="lastThank" href="#">Privacy Policy</a></Col>
+                        </Row>
 
                     </Col>
                 </Row>

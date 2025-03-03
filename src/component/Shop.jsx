@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { HiLink } from "react-icons/hi";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import dividers from "../images/divider_title.png";
@@ -16,7 +17,7 @@ const products = [
 
 function Shop() {
     return (
-       
+
         <Container fluid>
             <Row className="justify-content-md-center shop">
                 <Col lg={10} md={11} sm={9} xs={9} className="shop-main">
@@ -35,7 +36,11 @@ function Shop() {
                         {products.slice(0, 3).map((product, index) => (
                             <Col key={index} className="d-flex justify-content-center" lg={4} md={4} sm={4}>
                                 <Card className="card-sWhite">
-                                    <div className={`card-sImg ${product.className}`}></div>
+                                    <div className={`card-sImg ${product.className}`}>
+                                        <div className='shopHover'>
+                                            <HiLink className="shopIcon" />
+                                        </div>
+                                    </div>
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
@@ -49,7 +54,11 @@ function Shop() {
                         {products.slice(3, 6).map((product, index) => (
                             <Col key={index} className="d-flex justify-content-center" lg={4} md={4} sm={4}>
                                 <Card className="card-sWhite">
-                                    <div className={`card-sImg ${product.className}`}></div>
+                                    <div className={`card-sImg ${product.className}`}>
+                                        <div className='shopHover'>
+                                            <HiLink className="shopIcon" />
+                                        </div>
+                                    </div>
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
