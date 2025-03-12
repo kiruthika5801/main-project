@@ -1,9 +1,13 @@
+import Info from './Info';
+import Feedback from './Feedback';
+import Thank from './Thank';
+
 function Contacts(){
     return(
         <div>
-            <h1>Contacts</h1>
-            <p>Welcome to Contact page</p>
-
+            <Info />
+            <Feedback/>
+            <Thank />
         </div>
     )
 };

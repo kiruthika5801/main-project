@@ -9,6 +9,7 @@ import Abouts from './component/Abouts';
 import Features from './component/Features';
 import Shops from './component/Shops';
 import Team from './component/Team';
+import Services from './component/OurServices';
 import OurServices from './component/OurServices';
 import SingleServices from './component/SingleServices';
 import Blogs from './component/Blogs';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services/our-services" element={<Services />} />
           <Route path="/services/our-services" element={<OurServices />} />
           <Route path="/services/single-services" element={<SingleServices />} />
 

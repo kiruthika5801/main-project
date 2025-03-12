@@ -1,10 +1,14 @@
 import React from "react";
 import "../App.css";
+import Alerts from "./Alerts";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { HiLink } from "react-icons/hi";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import dividers from "../images/divider_title.png";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../action/cartActions";
+import { showAlert } from "../action/alertActions";
 
 const products = [
     { title: "Flower Decor", price: "$55.00", className: "card-sImgOne" },
@@ -16,6 +20,14 @@ const products = [
 ];
 
 function Shop() {
+    const dispatch = useDispatch(); // Redux Dispatch
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
+        console.log("Add to cart clicked:", product); // Check if button is clicked
+        dispatch(showAlert(product.title)); 
+        console.log("Alert dispatched:", product.title); 
+    };
     return (
 
         <Container fluid>
@@ -44,7 +56,7 @@ function Shop() {
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
-                                        <Button className="card-shopbtn" variant="primary">ADD TO CART</Button>
+                                        <Button className="card-shopbtn" variant="primary" onClick={() => handleAddToCart(product)}>ADD TO CART</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -62,7 +74,7 @@ function Shop() {
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
-                                        <Button className="card-shopbtn" variant="primary">ADD TO CART</Button>
+                                        <Button className="card-shopbtn" variant="primary" onClick={() => handleAddToCart(product)}>ADD TO CART</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -70,6 +82,7 @@ function Shop() {
                     </Row>
                 </Col>
             </Row>
+            <Alerts/>
         </Container>
     );
 }

@@ -1,8 +1,11 @@
+import Blog from './Blog';
+import Thank from './Thank';
+
 function Blogs(){
     return(
         <div>
-            <h1>Blog</h1>
-            <p> Welcome to Blog Page </p>
+            <Blog />
+            <Thank />
         </div>
     )
 };

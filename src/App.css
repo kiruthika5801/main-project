@@ -1711,12 +1711,6 @@ justify-content: center;
   text-decoration: none;
   color: #928b84;
 }
-
-
-
-
-
-
 @media (max-width: 325px) {
 
   .navbar-toggler-icon {

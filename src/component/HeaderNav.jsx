@@ -30,7 +30,7 @@ function HeaderNav() {
                         <Nav.Link as={Link} className='borde' to="/shop">SHOP</Nav.Link>
                         <Nav.Link as={Link} className='borde' to="/team">TEAM</Nav.Link>
                         <Dropdown>
-                          <Dropdown.Toggle as={Nav.Link} className="borde dropdown-toggle" style={{ textDecoration: 'none', color: 'white' }}>
+                          <Dropdown.Toggle as={Nav.Link} to="/services/our-services" className="borde dropdown-toggle" style={{ textDecoration: 'none', color: 'white' }}>
                             SERVICES
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
