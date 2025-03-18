@@ -14,6 +14,7 @@ import OurServices from './component/OurServices';
 import SingleServices from './component/SingleServices';
 import Blogs from './component/Blogs';
 import Contact from './component/Contact';
+import CartPage from './component/CartPage';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/cart" element={<CartPage />} /> 
           <Route path="/about" element={<Abouts />} />
           <Route path="/features" element={<Features />} />
           <Route path="/shop" element={<Shops />} />
@@ -35,8 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/our-services" element={<Services />} />
           <Route path="/services/our-services" element={<OurServices />} />
-          <Route path="/services/single-services" element={<SingleServices />} />
-
+          <Route path="/services/single-services" element={<SingleServices />}/>
         </Routes>
 
 

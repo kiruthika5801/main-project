@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux"; 
 import { hideAlert } from "../action/alertActions"; 
 import '../css/Popup.css';
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import {  Row, Col, Alert } from "react-bootstrap";
 import { MdCheckCircleOutline } from "react-icons/md";
 
 function Alerts() {
@@ -11,12 +11,12 @@ function Alerts() {
 
     return (
         <div>
-            {show && ( // ✅ If show is true, display alert
-                <Alert className="alertsBox" variant="success" onClose={() => dispatch(hideAlert())} dismissible>
+            {show && ( //If show is true, display alert
+                <Alert className="alertsBox"  onClose={() => dispatch(hideAlert())} dismissible>
                     <Row>
                         <Col lg={12} md={12} xs={12} className="checkBox">
                             <Alert.Heading>
-                                <MdCheckCircleOutline className="check" />
+                                <MdCheckCircleOutline className="check"/>
                             </Alert.Heading>
                         </Col>
                     </Row>

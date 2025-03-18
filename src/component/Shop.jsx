@@ -5,28 +5,40 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { HiLink } from "react-icons/hi";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import productOne from "../images/product1-706x783.jpg";
+import productTwo from "../images/product2-706x783.jpg";
+import productThree from "../images/product3-706x783.jpg";
+import productFour from "../images/product4-706x783 (1).jpg";
+import productFive from "../images/product5-555x615.jpg";
+import productSix from "../images/product6-555x615.jpg";
+
 import dividers from "../images/divider_title.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../action/cartActions";
 import { showAlert } from "../action/alertActions";
 
 const products = [
-    { title: "Flower Decor", price: "$55.00", className: "card-sImgOne" },
-    { title: "Wedding Arch", price: "$65.00", className: "card-sImgTwo" },
-    { title: "Table Centerpiece", price: "$87.00", className: "card-sImgThree" },
-    { title: "Wedding Bouquet", price: "$112.00", className: "card-sImgFour" },
-    { title: "Wedding Candles", price: "$45.00", className: "card-sImgFive" },
-    { title: "Wedding Lighted Signs", price: "$130.00", className: "card-sImgSix" },
+    {id:"1", title: "Flower Decor", price: "$55.00", className: "card-sImgOne", image:productOne, rewardPoints: 55},
+    {id:"2", title: "Wedding Arch", price: "$65.00", className: "card-sImgTwo", image: productTwo, rewardPoints: 65 },
+    { id:"3", title: "Table Centerpiece", price: "$87.00", className: "card-sImgThree", image: productThree, rewardPoints: 87 },
+    { id:"4", title: "Wedding Bouquet", price: "$112.00", className: "card-sImgFour", image: productFour, rewardPoints: 112 },
+    { id:"5", title: "Wedding Candles", price: "$45.00", className: "card-sImgFive", image: productFive, rewardPoints: 45 },
+    { id:"6", title: "Wedding Lighted Signs", price: "$130.00", className: "card-sImgSix", image: productSix, rewardPoints: 130 }
 ];
 
 function Shop() {
     const dispatch = useDispatch(); // Redux Dispatch
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product));
-        console.log("Add to cart clicked:", product); // Check if button is clicked
-        dispatch(showAlert(product.title)); 
-        console.log("Alert dispatched:", product.title); 
+        if (!product.id) {
+            console.error("Error: Missing 'id' in product", product);
+            return; // Prevent adding items without an ID
+        }
+    
+        console.log("Adding to cart:", product); // Debugging
+        dispatch(addToCart(product)); // Dispatch product with ID
+        dispatch(showAlert(product.title));  // Show alert with product title
+        console.log("showAlert:", product.title);
     };
     return (
 

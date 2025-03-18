@@ -2,8 +2,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import logo from '../images/mains.png'
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
+import { useSelector, useDispatch } from "react-redux";
+import { showCartSummary,hideCartSummary } from "../action/cartSummaryActions";
+import CartSummary from "./CartSummary";
 
 function Header() {
+  const cartCount = useSelector((state) => state.cart.cartCount);
+    const showCart = useSelector((state) => state.cartSummary.show);  // ✅ Get `show` state
+    const dispatch = useDispatch();
   return (
     <div>
       <Container fluid>
@@ -16,9 +22,9 @@ function Header() {
                 <Row><span >800-123-4567</span></Row>
 
               </Col>
-              <Col  className="w-auto">
+              <Col className="w-auto">
                 <Row className="image">
-                  
+
                   <FiPhone className="phone mt-3" />
                 </Row>
 
@@ -28,21 +34,23 @@ function Header() {
 
           </Col>
           <Col className="text-center  two"><img className="logo" src={logo} alt="tie-tales" /></Col>
-          <Col  className=" three">
+          <Col className=" three">
             <Row className="left ms-5 w-auto">
 
 
               <Col lg={3} className=" w-auto">
                 <Row className="image">
-                  <HiOutlineShoppingBag className="bag mt-3" />
+                  <HiOutlineShoppingBag className="bag mt-3" 
+                  onClick={() => dispatch(showCart ? hideCartSummary() : showCartSummary())}  
+                  style={{ cursor: "pointer" }}  
+              />
                 </Row>
 
               </Col>
               <Col className="w-auto" lg={9}>
 
                 <Row><span className="span" >your cart:</span></Row>
-                <Row><span className="span-text" >(2)-$120.00</span></Row>
-
+                <Row><span className="span-text">{cartCount} items</span></Row>
               </Col>
 
             </Row>
@@ -52,6 +60,8 @@ function Header() {
         </Row>
 
       </Container>
+       {/* ✅ Render CartSummary only if `showCart` is true */}
+       {showCart && <CartSummary />}
     </div>
 
   )

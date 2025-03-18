@@ -1,6 +1,6 @@
 const initialState = {
     show: false,
-    productTitle: "",
+    productTitle: "", //no product is stored initially
 };
 
 const alertReducer = (state = initialState, action) => {
