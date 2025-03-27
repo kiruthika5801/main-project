@@ -1,51 +1,26 @@
 import React from "react";
 import "../App.css";
-import Alerts from "./Alerts";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { HiLink } from "react-icons/hi";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import productOne from "../images/product1-706x783.jpg";
-import productTwo from "../images/product2-706x783.jpg";
-import productThree from "../images/product3-706x783.jpg";
-import productFour from "../images/product4-706x783 (1).jpg";
-import productFive from "../images/product5-555x615.jpg";
-import productSix from "../images/product6-555x615.jpg";
-
 import dividers from "../images/divider_title.png";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../action/cartActions";
-import { showAlert } from "../action/alertActions";
 
 const products = [
-    {id:"1", title: "Flower Decor", price: "$55.00", className: "card-sImgOne", image:productOne, rewardPoints: 55},
-    {id:"2", title: "Wedding Arch", price: "$65.00", className: "card-sImgTwo", image: productTwo, rewardPoints: 65 },
-    { id:"3", title: "Table Centerpiece", price: "$87.00", className: "card-sImgThree", image: productThree, rewardPoints: 87 },
-    { id:"4", title: "Wedding Bouquet", price: "$112.00", className: "card-sImgFour", image: productFour, rewardPoints: 112 },
-    { id:"5", title: "Wedding Candles", price: "$45.00", className: "card-sImgFive", image: productFive, rewardPoints: 45 },
-    { id:"6", title: "Wedding Lighted Signs", price: "$130.00", className: "card-sImgSix", image: productSix, rewardPoints: 130 }
+    { title: "Flower Decor", price: "$55.00", className: "card-sImgOne" },
+    { title: "Wedding Arch", price: "$65.00", className: "card-sImgTwo" },
+    { title: "Table Centerpiece", price: "$87.00", className: "card-sImgThree" },
+    { title: "Wedding Bouquet", price: "$112.00", className: "card-sImgFour" },
+    { title: "Wedding Candles", price: "$45.00", className: "card-sImgFive" },
+    { title: "Wedding Lighted Signs", price: "$130.00", className: "card-sImgSix" },
 ];
 
 function Shop() {
-    const dispatch = useDispatch(); // Redux Dispatch
-
-    const handleAddToCart = (product) => {
-        if (!product.id) {
-            console.error("Error: Missing 'id' in product", product);
-            return; // Prevent adding items without an ID
-        }
-    
-        console.log("Adding to cart:", product); // Debugging
-        dispatch(addToCart(product)); // Dispatch product with ID
-        dispatch(showAlert(product.title));  // Show alert with product title
-        console.log("showAlert:", product.title);
-    };
     return (
-
+       
         <Container fluid>
             <Row className="justify-content-md-center shop">
                 <Col lg={10} md={11} sm={9} xs={9} className="shop-main">
-                    <Row className="shop-head">
+                    <Row className="w-head">
                         <Col className="wel-one">Shop Our Latest Styles</Col>
                     </Row>
                     <Row className="w-para">
@@ -60,15 +35,11 @@ function Shop() {
                         {products.slice(0, 3).map((product, index) => (
                             <Col key={index} className="d-flex justify-content-center" lg={4} md={4} sm={4}>
                                 <Card className="card-sWhite">
-                                    <div className={`card-sImg ${product.className}`}>
-                                        <div className='shopHover'>
-                                            <HiLink className="shopIcon" />
-                                        </div>
-                                    </div>
+                                    <div className={`card-sImg ${product.className}`}></div>
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
-                                        <Button className="card-shopbtn" variant="primary" onClick={() => handleAddToCart(product)}>ADD TO CART</Button>
+                                        <Button className="card-shopbtn" variant="primary">ADD TO CART</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -78,15 +49,11 @@ function Shop() {
                         {products.slice(3, 6).map((product, index) => (
                             <Col key={index} className="d-flex justify-content-center" lg={4} md={4} sm={4}>
                                 <Card className="card-sWhite">
-                                    <div className={`card-sImg ${product.className}`}>
-                                        <div className='shopHover'>
-                                            <HiLink className="shopIcon" />
-                                        </div>
-                                    </div>
+                                    <div className={`card-sImg ${product.className}`}></div>
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
-                                        <Button className="card-shopbtn" variant="primary" onClick={() => handleAddToCart(product)}>ADD TO CART</Button>
+                                        <Button className="card-shopbtn" variant="primary">ADD TO CART</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -94,7 +61,6 @@ function Shop() {
                     </Row>
                 </Col>
             </Row>
-            <Alerts/>
         </Container>
     );
 }

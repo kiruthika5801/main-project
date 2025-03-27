@@ -15,6 +15,7 @@ function Welcome() {
 
         <div>
             <Container fluid >
+
                 <Row className="justify-content-md-center box ">
                     <Col className='wel-main' lg={11} md={11} xs={9}>
                         <Row className='w-head'>
@@ -31,9 +32,9 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4} >
                                 <Card className='card-white '>
                                     <div className=' card-img  card-imgOne'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
@@ -49,9 +50,9 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
                                     <div className=' card-img  card-imgTwo'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
@@ -68,9 +69,9 @@ function Welcome() {
                             <Col lg={4} md={4} sm={4}>
                                 <Card className='card-white'>
                                     <div className=' card-img  card-imgThree'>
-                                        <div className='linkHover'>
+                                        {/* <div className='linkHover'>
                                             <HiLink className="linkIcon" />
-                                        </div>
+                                        </div> */}
                                         <Card.Img variant="top"
                                         />
 
