@@ -1,0 +1,99 @@
+*{
+    font-family: "PT Serif", serif;
+}
+
+.checkoutBox {
+    background-color: aqua;
+    height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.checkout-main {
+    background-color: beige;
+    height: 550px;
+}
+
+.cHeadbox {
+    background-color: palegreen;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.checkHead {
+    font-size: 16px;
+    font-family: "PT Serif", serif;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f5f5f5;
+    border: none;
+    color: #333;
+
+}
+
+.accordion-button {
+    font-size: 14px !important;
+    font-family: "PT Serif", serif;
+    background-color: #f5f5f5;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.CheckOption {
+    /* background-color:lightgray; */
+    height: 350px;
+    display: flex;
+    justify-content: center;
+}
+.newCos{
+    /* background-color: beige; */
+    height: 300px;
+}
+.returnCos{
+    /* background-color:aqua; */
+    height: 300px;
+
+}
+
+.c-headOne{
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.c-paraOne{
+    font-size: 14px;
+}
+.c-check{
+    /* background-color: lightgreen; */
+    height: 30px;
+}
+.regCheck{
+    font-size: 13px;
+}
+.c-paraTwo{
+    font-size: 14px;
+}
+.logBox{
+    /* background-color: lightgray; */
+    height: 200px;
+}
+.formClass{
+    font-size: 13px;
+}
+.fOne{
+    /* background-color: coral; */
+    height: 105px;   
+}
+.fTwo{
+    /* background-color:lightcyan; */
+    height: 105px;  
+}
+.fButton{
+    /* background-color: chartreuse; */
+    height: 40px;
+}

@@ -1,0 +1,31 @@
+
+   .reg{
+    /* background-color: aqua; */
+    height: 950px;
+    
+  }
+  .reg-main{
+    /* background-color: beige; */
+    height: 950px;
+    display: flex;
+    align-items: center;
+  }
+  .Reg-form{
+    height:900px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, .05);
+   
+  }
+  
+  .Rhead{
+    /* background-color: chartreuse; */
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .RheadOne{
+    font-size: 18px;
+    font-family: "PT Serif", serif;
+  }
+  .city{
+    height: 40px;
+  }
