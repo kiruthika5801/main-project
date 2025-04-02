@@ -10,6 +10,7 @@ function CartPage() {
   const cartItems = useSelector((state) => state.cartSummary.cartItems);
   const navigate = useNavigate(); // Create navigate function
   const dispatch = useDispatch();
+  
 
   const handledNavigate = (e) => {
     e.preventDefault(); // Prevent any default form behavior
@@ -17,7 +18,7 @@ function CartPage() {
   };
     const handleCheckout = (e) => {
     e.preventDefault();
-    navigate("/checkout");
+    navigate("/login");
   };
 
 

@@ -15,12 +15,14 @@ function CartSummary() {
         e.preventDefault(); 
         navigate("/cart");
     };
-     const handleCheckout = (e) => {
+     const handleLogin= (e) => {
         e.preventDefault(); 
-        navigate("/checkOut");
+         navigate("/login");
+       
     };
 
     const cartItems = useSelector(state => state.cartSummary?.cartItems) || [];
+    console.log("Cart item is:", cartItems);
     const show = useSelector(state => state.cartSummary?.show);
 
     const totalAmount = useMemo(() =>
@@ -86,8 +88,8 @@ function CartSummary() {
 
 
                             <div className="text-center cart-buttons">
-                                <Button variant="primary" href="/cart" onClick={handleNavigate}>View Cart</Button>&nbsp;&nbsp;&nbsp;
-                                <Button variant="primary" href="/checkout" onClick={handleCheckout}>Checkout</Button>
+                                <Button variant="primary"  onClick={handleNavigate}>View Cart</Button>&nbsp;&nbsp;&nbsp;
+                                <Button variant="primary"  onClick={handleLogin}>Checkout</Button>
                             </div>
                         </Col>
                     </Row>

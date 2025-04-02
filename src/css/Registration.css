@@ -6,7 +6,7 @@
   }
   .reg-main{
     /* background-color: beige; */
-    height: 950px;
+    height: 900px;
     display: flex;
     align-items: center;
   }
@@ -20,7 +20,7 @@
     /* background-color: chartreuse; */
     height: 60px;
     display: flex;
-    align-items: center;
+    align-items: end;
   }
   .RheadOne{
     font-size: 18px;

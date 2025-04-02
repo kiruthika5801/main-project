@@ -15,33 +15,32 @@ function Registration() {
   const cartItems = useSelector((state) => state.cartSummary.cartItems)
 
   const handleRegistration = async (userData) => {
-    // Ensure that products array is populated with necessary details
+    // Extract title and price from cartItems
     if (cartItems.length === 0) {
       return alert("No products in cart. Please add products before registration.");
     }
-  
+
     const products = cartItems.map(item => ({
-      productId: item.id, 
       title: item.title,
-      quantity: item.quantity,
       price: item.price
     }));
-    console.log(products);
-  
+
+ 
     if (!userData.firstName || !userData.lastName || !userData.email || !userData.telephone || !userData.password) {
       return alert('All fields are required');
     }
-  
+    
     try {
+     
       const response = await fetch('http://localhost:7000/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...userData, products }),
       });
-  
+
       const result = await response.json();
       if (response.ok) {
-        dispatch(registerUser(userData)); // Dispatch after successful registration
+        dispatch(registerUser(userData));// Dispatch after successful registration
         setSuccessMessage(result.message || "Registered Successfully!");
         reset();
         navigate("/profile");
@@ -53,7 +52,6 @@ function Registration() {
       alert("Something went wrong. Please try again.");
     }
   };
-  
 
   const password = watch("password", "");
 
