@@ -10,13 +10,13 @@ function CartPage() {
   const cartItems = useSelector((state) => state.cartSummary.cartItems);
   const navigate = useNavigate(); // Create navigate function
   const dispatch = useDispatch();
-  
+
 
   const handledNavigate = (e) => {
     e.preventDefault(); // Prevent any default form behavior
     navigate("/");
   };
-    const handleCheckout = (e) => {
+  const handleCheckout = (e) => {
     e.preventDefault();
     navigate("/login");
   };
@@ -27,10 +27,11 @@ function CartPage() {
     0
   );
 
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + (parseFloat(item.price.replace('$', '')) * (item.quantity || 1)),
-    0
-  );
+  const totalPrice = cartItems.reduce((total, item) => {
+    if (!item.price) return total; // Prevent null/undefined values
+    const price = typeof item.price === "string" ? item.price.replace("$", "") : item.price;
+    return total + (parseFloat(price) * (item.quantity || 1));
+  }, 0);
 
   return (
     <Container className="mt-4">
@@ -55,7 +56,9 @@ function CartPage() {
                         <Card.Text>
                           <p>Price: <span className="cartPrice">{item.price}</span></p>
                           <p>Quantity: <span className="cartQuantity">{item.quantity}</span></p>
-                          <p>Total: <span className="cartTotal">${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</span></p>
+                          <p>Total: <span className="cartTotal">
+                            ${(parseFloat(typeof item.price === "string" ? item.price.replace("$", "") : item.price) * item.quantity).toFixed(2)}
+                          </span></p>
                           <p>Reward Points: <span className="cartReward">{item.rewardPoints * item.quantity} Points</span></p>
                         </Card.Text>
                       </Card.Body>

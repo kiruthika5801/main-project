@@ -27,7 +27,7 @@ function Login() {
 
             if (response.ok) {
                 alert(result.message);
-                dispatch(loginUser(result.user)); // ✅ Store logged-in user
+                dispatch(loginUser(result.user));
                 navigate('/profile'); // Adjust to your actual dashboard route
             } else {
                 alert(result.error);

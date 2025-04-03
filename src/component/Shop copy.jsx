@@ -13,7 +13,7 @@ import productFive from "../images/product5-555x615.jpg";
 import productSix from "../images/product6-555x615.jpg";
 
 import dividers from "../images/divider_title.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../action/cartActions";
 import { showAlert } from "../action/alertActions";
 
@@ -27,7 +27,9 @@ const products = [
 ];
 
 function Shop() {
-    const dispatch = useDispatch(); // Redux Dispatch
+    const dispatch = useDispatch(); 
+    const loggedInUser = useSelector((state) => state.user.loggedInUser);
+
 
     const handleAddToCart = (product) => {
         if (!product.id) {
@@ -35,11 +37,54 @@ function Shop() {
             return; // Prevent adding items without an ID
         }
     
-        console.log("Adding to cart:", product); // Debugging
+        console.log("Adding to cart:", product); 
         dispatch(addToCart(product)); // Dispatch product with ID
         dispatch(showAlert(product.title));  // Show alert with product title
         console.log("showAlert:", product.title);
     };
+
+    const handleAddOrder = async (product) => {
+        if (!loggedInUser || !loggedInUser._id) {
+            alert("Please login first!");
+            return;
+        }
+    
+        try {
+            console.log("Sending order request:", {  
+                userId: loggedInUser._id,
+                productId: product.id,
+                title: product.title,
+                quantity: 1,
+                price: product.price
+            });
+    
+            const response = await fetch('http://localhost:7000/add-order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userId: loggedInUser._id,
+                    productId: product.id,
+                    title: product.title,
+                    quantity: 1,
+                    price: product.price
+                })
+            });
+    
+            const result = await response.json();
+            console.log("API Response:", result); 
+    
+            if (response.ok && result.success) {
+                alert("Order placed successfully!");
+            } else {
+                alert(result.error || " Failed to place order.");
+            }
+        } catch (error) {
+            console.error("Error placing order:", error);
+            alert(" An error occurred while placing the order.");
+        }
+    };
+    
+    
     return (
 
         <Container fluid>
@@ -86,7 +131,16 @@ function Shop() {
                                     <Card.Body>
                                         <Card.Title className="card-Shead">{product.title}</Card.Title>
                                         <Card.Text className="card-price">{product.price}</Card.Text>
-                                        <Button className="card-shopbtn" variant="primary" onClick={() => handleAddToCart(product)}>ADD TO CART</Button>
+                                        <Button 
+                                        className="card-shopbtn"
+                                         variant="primary" 
+                                         onClick={() =>{
+                                            handleAddToCart(product);
+                                            handleAddOrder(product);
+                                        }} 
+                                        >
+                                            ADD TO CART
+                                            </Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

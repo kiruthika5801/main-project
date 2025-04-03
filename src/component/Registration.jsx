@@ -24,9 +24,9 @@ function Registration() {
       productId: item.id, 
       title: item.title,
       quantity: item.quantity,
-      price: item.price
+      price: String(item.price) // ✅ Convert price to string
     }));
-    console.log(products);
+    console.log("Products data before sending:", products); // Debugging
   
     if (!userData.firstName || !userData.lastName || !userData.email || !userData.telephone || !userData.password) {
       return alert('All fields are required');
