@@ -11,7 +11,7 @@ import productThree from "../images/product3-706x783.jpg";
 import productFour from "../images/product4-706x783 (1).jpg";
 import productFive from "../images/product5-555x615.jpg";
 import productSix from "../images/product6-555x615.jpg";
-
+import { useNavigate } from "react-router-dom";
 import dividers from "../images/divider_title.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../action/cartActions";
@@ -28,6 +28,7 @@ const products = [
 
 function Shop() {
     const dispatch = useDispatch(); 
+    const navigate = useNavigate();
     const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
     // ✅ Function to add a product to the cart
@@ -62,6 +63,7 @@ function Shop() {
 
             if (response.ok && result.success) {
                 alert("Order placed successfully!");
+                navigate("/OrderSummary");
             } else {
                 alert(result.error || "Failed to place order.");
             }

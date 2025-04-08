@@ -11,6 +11,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         users: [...state.users, action.payload], // ✅ Store new users in array
+        loggedInUser: action.payload,            // ✅ Also log them in immediately
       };
       case "LOGIN_USER":
       console.log("User Logged In:", action.payload);

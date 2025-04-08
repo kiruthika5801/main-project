@@ -1,0 +1,27 @@
+.oHead{
+    color: blue;
+}
+.order-main{
+    /* background-color: aqua; */
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-in{
+    /* background-color: beige; */
+    height: 700px;
+}
+.order-one{
+    /* background-color: lightgrey; */
+}
+.order-down{
+    display: flex;
+    justify-content: right;
+}
+.order-in .card{
+    background-color: transparent !important;
+    /* box-shadow: 0 0 3px 2px rgba(0, 0, 0, .05); */
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.15);
+
+}

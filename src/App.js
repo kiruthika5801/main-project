@@ -19,7 +19,8 @@ import CheckOut from './component/CheckOut';
 import Registration from './component/Registration';
 import Profile from './component/Profile';
 import Login from './component/Login';
-// import OrderSummary from './component/OrderSummary';
+import OrderSummary from './component/OrderSummary';
+
 
 
 function App() {
@@ -43,13 +44,12 @@ function App() {
           <Route path="/Register" element={<Registration/>} />
           <Route path="/Profile" element={<Profile/>} />
           <Route path="/login" element={<Login/>} />
-          {/* <Route path="/orderSummary" element={<OrderSummary/>} /> */}
-
-
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/our-services" element={<Services />} />
           <Route path="/services/our-services" element={<OurServices />} />
           <Route path="/services/single-services" element={<SingleServices />}/>
+          <Route path="/OrderSummary" element={<OrderSummary />} />
+          
         </Routes>
 
 

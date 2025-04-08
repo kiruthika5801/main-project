@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../action/userAction";
 import "../css/Login.css";
@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleLogin = async (data) => {
@@ -28,7 +28,8 @@ function Login() {
             if (response.ok) {
                 alert(result.message);
                 dispatch(loginUser(result.user));
-                navigate('/profile'); // Adjust to your actual dashboard route
+                // navigate('/profile'); // Adjust to your actual dashboard route
+               
             } else {
                 alert(result.error);
             }
