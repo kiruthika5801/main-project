@@ -14,7 +14,9 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "^5.0.1",
+    "react-svg-map": "^2.2.0",
     "redux": "^5.0.1",
+    "svg-world-map": "^1.0.1",
     "swiffy-slider": "^1.6.0",
     "swiper": "^11.2.4",
     "web-vitals": "^4.2.4"

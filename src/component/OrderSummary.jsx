@@ -43,6 +43,12 @@ const OrderSummary = () => {
     }, 0);
   }, [order]);
 
+  // ✅ Handle Confirm Order button click
+  const handleConfirmOrder = () => {
+    alert("Order placed successfully!");
+    navigate("/OrderSuccess");
+  };
+
   if (!order) {
     return <div>Loading your order summary...</div>;
   }
@@ -111,7 +117,7 @@ const OrderSummary = () => {
             </Row>
             <Row className="mt-3">
               <Col className="d-flex justify-content-end">
-                <button className="btn btn-success">
+                <button className="btn btn-success"  onClick={handleConfirmOrder}>
                   Confirm Order
                 </button>
               </Col>

@@ -28,7 +28,9 @@ function Login() {
             if (response.ok) {
                 alert(result.message);
                 dispatch(loginUser(result.user));
-                navigate('/profile'); // Adjust to your actual dashboard route
+                // navigate('/profile'); // Adjust to your actual dashboard route
+                // navigate('/OrderSummary');
+   
             } else {
                 alert(result.error);
             }

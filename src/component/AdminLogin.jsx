@@ -1,95 +1,71 @@
-import React,{ useState } from 'react';  //here
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../action/userAction";
-import "../css/Login.css";
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
+function AdminLogin() {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [loginError, setLoginError] = useState("");
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart.cartItems);
-
-    const [loginError, setLoginError] = useState('');  // State to hold login error message here
-
 
     const handleLogin = async (data) => {
         try {
-
-            const response = await fetch('http://localhost:7000/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const response = await fetch("http://localhost:7000/admin-login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(data)
             });
 
             const result = await response.json();
 
             if (response.ok) {
-                alert(result.message);
-                dispatch(loginUser(result.user));
-                // navigate('/profile'); // Adjust to your actual dashboard route
-                // navigate('/OrderSummary');
-
-                const hasCartItems = cartItems && cartItems.length > 0;
-
-                if (hasCartItems) {
-                    navigate('/OrderSummary');
-                } else {
-                    navigate('/');
-                }
-
-
+                setLoginError("Admin login successful");  // Success message displayed here
+                setTimeout(() => {
+                    navigate('/admin');  // Delay navigation to show success message
+                }, 2000);  // Adjust delay as needed
             } else {
-                // alert(result.error);
-                if (result.error === 'No account found with this email. Please register first.') {   //here
-                    setLoginError(result.error);  // Set error message in the state
-                } else {
-                    alert(result.error);  // For other errors, show alert
-                }
+                setLoginError(result.error);  // Show error message
             }
-
         } catch (error) {
-            console.error('Error during login:', error);
-            alert('An error occurred. Please try again later.');
+            console.error("Error:", error);
+            setLoginError("Something went wrong. Please try again later.");
         }
     };
 
     return (
         <div>
             <Container fluid>
-                <form onSubmit={handleSubmit(handleLogin)} noValidate >
-
+                <form onSubmit={handleSubmit(handleLogin)} noValidate>
                     <Row className="justify-content-md-center login">
                         <Col xs lg={4} className='login-main'>
                             <Row className='login-one'>
                                 <Col lg={12}>
-                                    <h2 className='login-head'>LOGIN</h2>
+                                    <h2 className='login-head'> ADMIN LOGIN</h2>
                                 </Col>
                             </Row>
+
                             <Row className='lOne'>
                                 <Col lg={12}>
-                                    <label className='loginClass'>Email Address</label>
+                                    <label className='loginClass'>User Name</label>
                                     <input
-                                        type="email"
+                                        type="text"
                                         className="form-control w-100 mt-2 h-25 p-3"
-                                        {...register('email', {
-                                            required: 'Email is required',
+                                        {...register('username', {
+                                            required: 'Username is required',
                                             pattern: {
-                                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                                message: "Please enter a valid email address"
+                                                value: /^[a-zA-Z0-9_]{3,20}$/,
+                                                message: "Username must be 3-20 characters"
                                             }
                                         })}
                                     />
-                                    <p style={{ color: "red" }}>{errors?.email && errors.email.message}</p>
+                                    <p style={{ color: "red" }}>{errors?.username && errors.username.message}</p>
                                 </Col>
                             </Row>
+
                             <Row className='lTwo'>
-                                <Col lg={12} >
+                                <Col lg={12}>
                                     <label className='loginClass'>Password</label>
                                     <input
                                         type="password"
@@ -105,7 +81,7 @@ function Login() {
                                                 message: "Password cannot exceed 12 characters"
                                             },
                                             pattern: {
-                                                value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/,
+                                                value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,12}$/,
                                                 message: "Please enter a valid password"
                                             }
                                         })}
@@ -114,11 +90,16 @@ function Login() {
                                 </Col>
                             </Row>
 
-                            {/* Display the error message here */}  
-                            {loginError && (                                 //here
+                            {/* Login error or success message */}
+                            {loginError && (
                                 <Row className="loginError">
                                     <Col lg={12}>
-                                        <p style={{ color: "red", textAlign: "center" }}>{loginError}</p>
+                                        <p style={{ 
+                                            color: loginError === "Admin login successful" ? "green" : "red", 
+                                            textAlign: "center" 
+                                        }}>
+                                            {loginError}
+                                        </p>
                                     </Col>
                                 </Row>
                             )}
@@ -128,16 +109,13 @@ function Login() {
                                     <Button type="submit" variant="primary" className='loginbtn'>Login</Button>
                                 </Col>
                             </Row>
-                            <Row className="loginLast" >
-                                <Col lg={12}> <p className="mt-1">New user? <Link to="/Register" className="text-decoration-none" >Create an account</Link></p></Col>
-                            </Row>
                         </Col>
                     </Row>
-
                 </form>
             </Container>
         </div>
     );
 }
 
-export default Login;
+export default AdminLogin;
+

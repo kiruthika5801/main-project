@@ -1,0 +1,166 @@
+.admin-main{
+    /* background-color: aqua; */
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-in{
+    /* background-color: beige; */
+    height:700px;
+}
+.ad-left{
+    background-color: #242d37;
+    height: 700px;
+}
+.ad-right{
+    /* background-color: lightgray; */
+    height: 700px;
+}
+.ad-one{
+   background-color: #19222E;
+   color: white;
+   text-transform: uppercase;
+   padding: 15px;
+}
+.add-bars{
+    color: white;
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+}
+.admin-nav {
+    /* list-style: none; */
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.admin-link{
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* cursor: pointer; */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #3a4a5a; 
+}
+
+.admin-nav li:hover {
+    background-color: #314153;
+    color: white !;
+    /* border-left: 4px solid aqua; */
+}
+
+.admin-icon {
+    font-size: 16px;
+}
+.admin-nav :hover{
+    color: white !important;
+    background-color: rgb(107, 87, 87);
+
+}
+/* user */
+
+.user-main{
+    /* background-color: lightblue; */
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-in{
+    /* background-color: lightpink; */
+    height: 650px;
+}
+.user-in .card{
+    background-color: transparent !important;
+    
+    /* box-shadow: 0 0 3px 2px rgba(0, 0, 0, .05); */
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.15);
+
+}
+/* Box shadow for table */
+.user-in table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Remove horizontal scrolling */
+.user-in {
+    overflow-x: hidden;
+}
+
+/* Optional: make table fit container on small screens */
+.table-responsive {
+    overflow-x: auto;
+}
+/* .dash-in .tile-card {
+    height: 250px;
+    background-color: #1b80c2 !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .tile-card h2 {
+    margin: 0;
+  }
+  .dash-main{
+    background-color: lightblue;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash-in{
+    background-color: lightpink;
+    height: 550px;
+} */
+
+.dash-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+  }
+  
+  .dash-in {
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dash-in .tile-card {
+    height: 270px;
+    background-color: #1b80c2 !important;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .dash-in .tile-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tile-card h2 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .tile-card p {
+    color: #f0f0f0;
+    font-size: 0.95rem;
+  }
+  
+  .card-header {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+
+
+
+
+  
+

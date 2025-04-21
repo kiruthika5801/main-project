@@ -24,7 +24,7 @@ function Registration() {
       productId: item.id,
       title: item.title,
       quantity: item.quantity,
-      price: String(item.price) // ✅ Convert price to string
+      price: String(item.price) // Convert price to string
     }));
     console.log("Products data before sending:", products); // Debugging
 
@@ -46,11 +46,12 @@ function Registration() {
         setSuccessMessage(result.message || "Registered Successfully!");
         reset();
         // navigate("/profile");
-  
-      setTimeout(() => {
-        navigate("/OrderSummary");
-      }, 700); 
-      
+
+        setTimeout(() => {
+          // navigate("/OrderSummary");
+          navigate("/Login");
+        }, 2000);
+
       } else {
         alert(result.error || "Registration failed");
       }
@@ -65,7 +66,7 @@ function Registration() {
 
   return (
     <div>
-      {successMessage && <Alert variant="success" onClose={() => setSuccessMessage("")} dismissible>{successMessage}</Alert>}
+      {/* {successMessage && <Alert variant="success" onClose={() => setSuccessMessage("")} dismissible>{successMessage}</Alert>} */}
       <form onSubmit={handleSubmit(handleRegistration)} noValidate>
         <Container fluid>
           <Row className="justify-content-md-center reg">
@@ -79,12 +80,27 @@ function Registration() {
                 {/* First Name and Last Name */}
                 <Row>
                   <Col lg={6}><label>First Name</label>
-                    <input {...register("firstName", { required: "First name is required" })} className="form-control" />
+                    <input {...register("firstName", {
+                      required: "First name is required",
+                      pattern: {
+                        value: /^[A-Za-z]{2,30}$/,
+                        message: "Invalid first name"
+                      }
+                    })}
+                      className="form-control" />
                     <p style={{ color: "red" }}>{errors.firstName?.message}</p>
                   </Col>
 
                   <Col lg={6}><label>Last Name</label>
-                    <input {...register("lastName", { required: "Last name is required" })} className="form-control" />
+                    <input {...register("lastName", {
+                      required: "Last name is required",
+                      pattern: {
+                        value: /^[A-Za-z]{2,30}$/,
+                        message: "Invalid last name"
+                      }
+
+                    })}
+                      className="form-control" />
                     <p style={{ color: "red" }}>{errors.lastName?.message}</p>
                   </Col>
                 </Row>
@@ -92,11 +108,24 @@ function Registration() {
                 {/* Email and Telephone */}
                 <Row>
                   <Col lg={6}><label>Email</label>
-                    <input {...register("email", { required: "Email is required" })} className="form-control" />
+                    <input {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                        message: "please enter the valid email address"
+                      }
+
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.email?.message}</p>
                   </Col>
                   <Col lg={6}><label>Telephone</label>
-                    <input {...register("telephone", { required: "Telephone is required" })} className="form-control" />
+                    <input {...register("telephone", {
+                      required: "Telephone is required",
+                      pattern: {
+                        value: /^[6-9]\d{9}$/,
+                        message: "Please enter a valid 10-digit phone number starting with 6-9"
+                      }
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.telephone?.message}</p>
                   </Col>
                 </Row>
@@ -104,7 +133,22 @@ function Registration() {
                 {/* Password and Confirm Password */}
                 <Row>
                   <Col lg={6}><label>Password</label>
-                    <input type="password" {...register("password", { required: "Password is required" })} className="form-control" />
+                    <input type="password" {...register("password", {
+                      required: "password is required",
+                      minLength: {
+                        value: 8,
+                        message: "Password must be at least 8 characters"
+                      },
+                      maxLength: {
+                        value: 12,
+                        message: "Password cannot exceed 12 characters"
+                      },
+                      pattern: {
+                        value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/,
+                        message: "please enter the valid password"
+                      }
+
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.password?.message}</p>
                   </Col>
                   <Col lg={6}><label>Confirm Password</label>
@@ -150,6 +194,20 @@ function Registration() {
                     <p style={{ color: "red" }}>{errors.country?.message}</p>
                   </Col>
                 </Row>
+
+                {/* Display Success Message Below the Submit Button inside the registration box */}  
+                {successMessage && (                                                                    //here
+                  <Row className="mt-3">
+                    <Col className="text-center">
+                      {/* <Alert variant="success">
+                        {successMessage}
+                        
+                      </Alert> */}
+                      <p style={{ color: "green", textAlign: "center" }}>{successMessage}</p>
+                    </Col>
+                  </Row>
+                )}
+
 
                 <Row className="mt-4">
                   <Col className="text-center">

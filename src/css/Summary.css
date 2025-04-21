@@ -26,7 +26,7 @@
 }
 
 .sumOne {
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 90px;
     display: flex;
     align-items: center;
@@ -35,11 +35,18 @@
     border-radius: 8px;
     margin-bottom: 5px;
 }
+.sumOne .btn{
+    background-color: transparent !important;
+    border: 1px solid #dee2e6;
+    /* box-shadow: 0 0 3px 2px rgba(0, 0, 0, .05); */
+}
 
 .sumRight {
-    background-color: bisque;
+    /* background-color: bisque; */
     padding: 5px;
     border-radius: 8px;
+  border: 1px solid #dee2e6;
+  
 }
 .total{
     display: flex;
@@ -57,7 +64,7 @@
 .cart-placeholder {
     width: 60px;
     height: 60px;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     display: flex;
     align-items: center;
     justify-content: center;

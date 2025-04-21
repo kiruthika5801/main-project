@@ -6,12 +6,10 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaGooglePlusG } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Thank() {
-    const navigate = useNavigate();
     return (
         <div>
             <Container fluid>
@@ -47,11 +45,6 @@ function Thank() {
                                 </Row>
                             </Col>
                         </Row>
-
-                        <Button variant="dark" className="w-100" onClick={() => navigate("/admin-login")}>
-                            Go to Admin Panel
-                        </Button>
-
                         <Row className="line">
                             <Col lg={12} md={12} xs={12}><hr /></Col>
                         </Row>

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, {useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { hideCartSummary } from "../action/cartSummaryActions";
 import { removeFromCart } from "../action/cartSummaryActions"; // Import remove action
@@ -31,6 +31,17 @@ function CartSummary() {
             return total + price * (item.quantity || 1);
         }, 0),
         [cartItems]);
+
+        // Auto-hide Cart Summary after 5 seconds
+    useEffect(() => {
+        if (show) {
+            const timer = setTimeout(() => {
+                dispatch(hideCartSummary()); // Dispatch action to hide Cart Summary
+            }, 3000); // 3 seconds timeout
+
+            return () => clearTimeout(timer); // Cleanup on unmount
+        }
+    }, [show, dispatch]);
 
     return (
         <>

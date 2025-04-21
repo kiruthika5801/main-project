@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "../css/Registration.css";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../action/userAction";
 import { Col, Container, Row, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -15,23 +15,24 @@ function Registration() {
   const cartItems = useSelector((state) => state.cartSummary.cartItems)
 
   const handleRegistration = async (userData) => {
-    // Extract title and price from cartItems
+    // Ensure that products array is populated with necessary details
     if (cartItems.length === 0) {
       return alert("No products in cart. Please add products before registration.");
     }
 
     const products = cartItems.map(item => ({
+      productId: item.id,
       title: item.title,
-      price: item.price
+      quantity: item.quantity,
+      price: String(item.price) // Convert price to string
     }));
+    console.log("Products data before sending:", products); // Debugging
 
- 
     if (!userData.firstName || !userData.lastName || !userData.email || !userData.telephone || !userData.password) {
       return alert('All fields are required');
     }
-    
+
     try {
-     
       const response = await fetch('http://localhost:7000/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -40,10 +41,17 @@ function Registration() {
 
       const result = await response.json();
       if (response.ok) {
-        dispatch(registerUser(userData));// Dispatch after successful registration
+        // dispatch(registerUser(userData)); // Dispatch after successful registration
+        dispatch(registerUser(result.user));
         setSuccessMessage(result.message || "Registered Successfully!");
         reset();
-        navigate("/profile");
+        // navigate("/profile");
+
+        setTimeout(() => {
+          // navigate("/OrderSummary");
+          navigate("/Login");
+        }, 2000);
+
       } else {
         alert(result.error || "Registration failed");
       }
@@ -52,6 +60,7 @@ function Registration() {
       alert("Something went wrong. Please try again.");
     }
   };
+
 
   const password = watch("password", "");
 
@@ -71,12 +80,27 @@ function Registration() {
                 {/* First Name and Last Name */}
                 <Row>
                   <Col lg={6}><label>First Name</label>
-                    <input {...register("firstName", { required: "First name is required" })} className="form-control"/>
+                    <input {...register("firstName", {
+                      required: "First name is required",
+                      pattern: {
+                        value: /^[A-Za-z]{2,30}$/,
+                        message: "Invalid first name"
+                      }
+                    })}
+                      className="form-control" />
                     <p style={{ color: "red" }}>{errors.firstName?.message}</p>
                   </Col>
 
                   <Col lg={6}><label>Last Name</label>
-                    <input {...register("lastName", { required: "Last name is required" })} className="form-control"/>
+                    <input {...register("lastName", {
+                      required: "Last name is required",
+                      pattern: {
+                        value: /^[A-Za-z]{2,30}$/,
+                        message: "Invalid last name"
+                      }
+
+                    })}
+                      className="form-control" />
                     <p style={{ color: "red" }}>{errors.lastName?.message}</p>
                   </Col>
                 </Row>
@@ -84,11 +108,24 @@ function Registration() {
                 {/* Email and Telephone */}
                 <Row>
                   <Col lg={6}><label>Email</label>
-                    <input {...register("email", { required: "Email is required" })} className="form-control"/>
+                    <input {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                        message: "please enter the valid email address"
+                      }
+
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.email?.message}</p>
                   </Col>
                   <Col lg={6}><label>Telephone</label>
-                    <input {...register("telephone", { required: "Telephone is required" })} className="form-control"/>
+                    <input {...register("telephone", {
+                      required: "Telephone is required",
+                      pattern: {
+                        value: /^[6-9]\d{9}$/,
+                        message: "Please enter a valid 10-digit phone number starting with 6-9"
+                      }
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.telephone?.message}</p>
                   </Col>
                 </Row>
@@ -96,11 +133,26 @@ function Registration() {
                 {/* Password and Confirm Password */}
                 <Row>
                   <Col lg={6}><label>Password</label>
-                    <input type="password" {...register("password", { required: "Password is required" })} className="form-control"/>
+                    <input type="password" {...register("password", {
+                      required: "password is required",
+                      minLength: {
+                        value: 8,
+                        message: "Password must be at least 8 characters"
+                      },
+                      maxLength: {
+                        value: 12,
+                        message: "Password cannot exceed 12 characters"
+                      },
+                      pattern: {
+                        value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/,
+                        message: "please enter the valid password"
+                      }
+
+                    })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.password?.message}</p>
                   </Col>
                   <Col lg={6}><label>Confirm Password</label>
-                    <input type="password" {...register("confirmPassword", { validate: (value) => value === password || "Passwords do not match" })} className="form-control"/>
+                    <input type="password" {...register("confirmPassword", { validate: (value) => value === password || "Passwords do not match" })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.confirmPassword?.message}</p>
                   </Col>
                 </Row>
@@ -108,7 +160,7 @@ function Registration() {
                 {/* Address */}
                 <Row>
                   <Col lg={6}><label>Address</label>
-                    <input {...register("address", { required: "Address is required" })} className="form-control"/>
+                    <input {...register("address", { required: "Address is required" })} className="form-control" />
                     <p style={{ color: "red" }}>{errors.address?.message}</p>
                   </Col>
 

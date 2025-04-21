@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { useSelector, useDispatch } from "react-redux"; 
 import { hideAlert } from "../action/alertActions"; 
 import '../css/Popup.css';
@@ -8,6 +8,18 @@ import { MdCheckCircleOutline } from "react-icons/md";
 function Alerts() {
     const dispatch = useDispatch(); // Get Redux dispatch function
     const { show, productTitle } = useSelector((state) => state.alert); // Get alert state from Redux
+
+     // Auto-hide alert after 3 seconds
+     useEffect(() => {
+        if (show) {
+            const timer = setTimeout(() => {
+                dispatch(hideAlert());
+            }, 3000); // ⏳ 3 seconds
+
+            return () => clearTimeout(timer); // Clean up on unmount
+        }
+    }, [show, dispatch]);
+
 
     return (
         <div>

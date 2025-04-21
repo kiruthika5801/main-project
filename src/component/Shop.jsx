@@ -42,7 +42,7 @@ function Shop() {
     // ✅ Function to place an order
     const handleAddOrder = async (product) => {
         if (!loggedInUser || !loggedInUser._id) {
-            alert("Please login first!");
+            // alert("Please login first!");
             return;
         }
 
