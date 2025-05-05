@@ -752,15 +752,17 @@
 }
 
 .shop {
-  /* background-color: aqua; */
-  height: 1580px;
+  background-color: aqua;
+  /* height: 1580px; */
+  height: auto;
   display: flex;
   justify-content: center;
 }
 
 .shop-main {
-  /* background-color: beige; */
-  height: 1545px;
+  background-color: beige;
+  /* height: 1545px; */
+  height: auto;
 }
 
 .shop-head {
@@ -800,6 +802,11 @@
   height: 409px;
   overflow: hidden;
 
+}
+.shop-product-img {
+  width: 369px;
+  height: 409px;
+  object-fit: cover;
 }
 
 .card-sImg img {

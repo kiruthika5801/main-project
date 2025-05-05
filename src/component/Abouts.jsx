@@ -9,10 +9,15 @@ import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Thank from './Thank';
+import Header from '../component/Header';
+import HeaderNav from '../component/HeaderNav';
 
 function Abouts() {
     return (
         <div>
+            <Header />
+            <HeaderNav />
+
             <Container fluid>
                 <Row className="justify-content-md-center about">
                     <Col xs={9} md={11} lg={10} className="about-main">

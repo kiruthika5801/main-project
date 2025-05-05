@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../css/Admin.css";
-import { Container, Row, Col, Table, Card } from "react-bootstrap";
+import { Container, Row, Col, Table, Card, Button } from "react-bootstrap";
 
 function User() {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const usersPerPage = 5;
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -30,6 +32,14 @@ function User() {
         return <div>Loading users...</div>;
     }
 
+    // Pagination logic for when there are more than 5 users
+    const indexOfLastUser = currentPage * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+    // Condition to check if pagination is required (more than 5 users)
+    const totalPages = Math.ceil(users.length / usersPerPage);
+
     return (
         <div>
             <Container fluid>
@@ -54,22 +64,60 @@ function User() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {users.map((user, index) => (
-                                            <tr key={user._id}>
-                                                <td>{index + 1}</td>
-                                                <td>{user._id}</td>
-                                                <td>{user.firstName}</td>
-                                                <td>{user.lastName}</td>
-                                                <td>{user.email}</td>
-                                                <td>{user.telephone}</td>
-                                                <td>{user.address}</td>
-                                                <td>{user.city}</td>
-                                                <td>{user.state}</td>
-                                                <td>{user.country}</td>
-                                            </tr>
-                                        ))}
+                                        {users.length <= 5 ? (
+                                            // Display all users if there are 5 or fewer
+                                            users.map((user, index) => (
+                                                <tr key={user._id}>
+                                                    <td>{index + 1}</td>
+                                                    <td>{user._id}</td>
+                                                    <td>{user.firstName}</td>
+                                                    <td>{user.lastName}</td>
+                                                    <td>{user.email}</td>
+                                                    <td>{user.telephone}</td>
+                                                    <td>{user.address}</td>
+                                                    <td>{user.city}</td>
+                                                    <td>{user.state}</td>
+                                                    <td>{user.country}</td>
+                                                </tr>
+                                            ))
+                                        ) : (
+                                            // Display paginated users when there are more than 5
+                                            currentUsers.map((user, index) => (
+                                                <tr key={user._id}>
+                                                    <td>{index + 1 + (currentPage - 1) * usersPerPage}</td>
+                                                    <td>{user._id}</td>
+                                                    <td>{user.firstName}</td>
+                                                    <td>{user.lastName}</td>
+                                                    <td>{user.email}</td>
+                                                    <td>{user.telephone}</td>
+                                                    <td>{user.address}</td>
+                                                    <td>{user.city}</td>
+                                                    <td>{user.state}</td>
+                                                    <td>{user.country}</td>
+                                                </tr>
+                                            ))
+                                        )}
                                     </tbody>
                                 </Table>
+
+                                {/* Pagination Controls (only visible when there are more than 5 users) */}
+                                {users.length > 5 && (
+                                    <div className="pagination-controls" >
+                                        <Button
+                                            disabled={currentPage === 1}
+                                            onClick={() => setCurrentPage(currentPage - 1)}
+                                        >
+                                            Previous
+                                        </Button>
+                                        <span> Page {currentPage} of {totalPages} </span>
+                                        <Button
+                                            disabled={currentPage === totalPages}
+                                            onClick={() => setCurrentPage(currentPage + 1)}
+                                        >
+                                            Next
+                                        </Button>
+                                    </div>
+                                )}
                             </Card.Body>
                         </Card>
                     </Col>

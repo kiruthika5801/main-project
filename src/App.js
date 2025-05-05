@@ -1,9 +1,9 @@
 
-import Header from './component/Header';
+// import Header from './component/Header';
 import { Routes, Route } from "react-router-dom";
 import "../src/App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HeaderNav from './component/HeaderNav';
+// import HeaderNav from './component/HeaderNav';
 import Home from './component/Home';
 import Abouts from './component/Abouts';
 import Features from './component/Features';
@@ -27,6 +27,7 @@ import Order from './admin/Order';
 // import Catalog from './admin/Catalog';
 import Dashboard from './admin/Dashboard';
 import AdminLogin from './component/AdminLogin';
+import Settings from './admin/Settings';
 
 
 
@@ -34,8 +35,8 @@ function App() {
   return (
     <div>
 
-      <Header />
-      <HeaderNav />
+      {/* <Header /> */}
+      {/* <HeaderNav /> */}
 
       {/* Routes for Page Navigation */}
       <Routes>
@@ -66,6 +67,7 @@ function App() {
           {/* <Route path="catalog" element={<Catalog />} /> */}
           <Route path="user" element={<User />} />
           <Route path="orders" element={<Order />} />
+          <Route path="Settings" element={<Settings />} />
         </Route>
 
       </Routes>

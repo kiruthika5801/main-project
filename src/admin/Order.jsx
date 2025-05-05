@@ -11,7 +11,7 @@ function Order() {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('http://localhost:7000/get-orders');
+                const response = await fetch('http://localhost:8000/get-orders');
                 const data = await response.json();
                 if (response.ok) {
                     setOrders(data.orders);

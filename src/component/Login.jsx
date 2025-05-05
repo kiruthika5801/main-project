@@ -1,10 +1,12 @@
-import React,{ useState } from 'react';  //here
+import React, { useState } from 'react';  //here
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../action/userAction";
 import "../css/Login.css";
+import Header from '../component/Header';
+import HeaderNav from '../component/HeaderNav';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -21,7 +23,7 @@ function Login() {
     const handleLogin = async (data) => {
         try {
 
-            const response = await fetch('http://localhost:7000/login', {
+            const response = await fetch('http://localhost:8000/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -61,6 +63,8 @@ function Login() {
 
     return (
         <div>
+            <Header />
+            <HeaderNav />
             <Container fluid>
                 <form onSubmit={handleSubmit(handleLogin)} noValidate >
 
@@ -114,7 +118,7 @@ function Login() {
                                 </Col>
                             </Row>
 
-                            {/* Display the error message here */}  
+                            {/* Display the error message here */}
                             {loginError && (                                 //here
                                 <Row className="loginError">
                                     <Col lg={12}>

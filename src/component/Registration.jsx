@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../action/userAction";
 import { Col, Container, Row, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Header from '../component/Header';
+import HeaderNav from '../component/HeaderNav';
 
 function Registration() {
   const { register, handleSubmit, formState: { errors }, watch, reset } = useForm({ mode: "onSubmit" });
@@ -33,7 +35,7 @@ function Registration() {
     }
 
     try {
-      const response = await fetch('http://localhost:7000/register', {
+      const response = await fetch('http://localhost:8000/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...userData, products }),
@@ -66,6 +68,9 @@ function Registration() {
 
   return (
     <div>
+      <Header />
+      <HeaderNav />
+
       {/* {successMessage && <Alert variant="success" onClose={() => setSuccessMessage("")} dismissible>{successMessage}</Alert>} */}
       <form onSubmit={handleSubmit(handleRegistration)} noValidate>
         <Container fluid>
@@ -195,7 +200,7 @@ function Registration() {
                   </Col>
                 </Row>
 
-                {/* Display Success Message Below the Submit Button inside the registration box */}  
+                {/* Display Success Message Below the Submit Button inside the registration box */}
                 {successMessage && (                                                                    //here
                   <Row className="mt-3">
                     <Col className="text-center">

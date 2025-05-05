@@ -14,11 +14,16 @@ import Picture from './Picture';
 import Feedback from './Feedback';
 import Info from './Info';
 import Thank from './Thank';
+import Header from '../component/Header';
+import HeaderNav from '../component/HeaderNav';
+
 
 
 function Home() {
     return (
         <div>
+            <Header />
+            <HeaderNav />
             <Main />
             <Green />
             <Welcome />

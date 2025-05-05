@@ -18,7 +18,7 @@ const OrderSummary = () => {
     const fetchOrderSummary = async () => {
       try {
         await new Promise(resolve => setTimeout(resolve, 500)); // 0.5 second delay
-        const response = await fetch(`http://localhost:7000/get-order-summary/${loggedInUser._id}`);
+        const response = await fetch(`http://localhost:8000/get-order-summary/${loggedInUser._id}`);
         const data = await response.json();
         if (response.ok) {
 

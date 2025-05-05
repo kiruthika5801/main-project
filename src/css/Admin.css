@@ -157,6 +157,24 @@
     font-size: 1.2rem;
     color: white;
   }
+  .dropdown-menu {
+    z-index: 1050 !important;
+  }
+
+  /* setting */
+
+  .set-main{
+    background-color: aqua;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .set-in{
+    background-color: beige;
+    height: 500px;
+  }
+
   
 
 
