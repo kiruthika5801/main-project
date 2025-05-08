@@ -40,43 +40,59 @@ function Settings() {
   };
 
   return (
-    <Container>
+    <Container className="mt-4">
       <Row>
-        <Col md={6}>
+        <Col>
           <Card>
             <Card.Body>
-            <h4 className="mb-4 text-center">Add Product</h4>
+              {/* <h4 className="mb-4 text-center">Add Product</h4> */}
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="productTitle">
-                  <Form.Label>Title</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={product.title}
-                    onChange={(e) => setProduct({ ...product, title: e.target.value })}
-                    required
-                  />
-                </Form.Group>
+                <Row className="align-items-end">
+                  <Col md={3}>
+                    <Form.Group controlId="productTitle">
+                      <Form.Label>Title</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={product.title}
+                        onChange={(e) =>
+                          setProduct({ ...product, title: e.target.value })
+                        }
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
-                <Form.Group controlId="productPrice">
-                  <Form.Label>Price</Form.Label>
-                  <Form.Control
-                    type="number"
-                    value={product.price}
-                    onChange={(e) => setProduct({ ...product, price: e.target.value })}
-                    required
-                  />
-                </Form.Group>
+                  <Col md={2}>
+                    <Form.Group controlId="productPrice">
+                      <Form.Label>Price</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={product.price}
+                        onChange={(e) =>
+                          setProduct({ ...product, price: e.target.value })
+                        }
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
-                <Form.Group controlId="productImage">
-                  <Form.Label>Image</Form.Label>
-                  <Form.Control
-                    type="file"
-                    onChange={handleImageChange}
-                    required
-                  />
-                </Form.Group>
+                  <Col md={4}>
+                    <Form.Group controlId="productImage">
+                      <Form.Label>Image</Form.Label>
+                      <Form.Control
+                        type="file"
+                        onChange={handleImageChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
-                <Button type="submit">Add Product</Button>
+                  <Col md={3} className="d-grid">
+                    <Button type="submit" className="mt-2">
+                      Add Product
+                    </Button>
+                  </Col>
+                </Row>
               </Form>
             </Card.Body>
           </Card>

@@ -34,7 +34,7 @@ function Admin() {
                                                 <FaClipboardList className="admin-icon" /> Orders
                                             </Nav.Link>
                                             <Nav.Link as={Link} to="/admin/Settings" className="admin-link">
-                                                <FaClipboardList className="admin-icon" /> Settings
+                                                <FaClipboardList className="admin-icon" /> Categories
                                             </Nav.Link>
                                         </Nav>
                                     </Col>
