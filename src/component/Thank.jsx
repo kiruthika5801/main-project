@@ -48,9 +48,9 @@ function Thank() {
                             </Col>
                         </Row>
 
-                        <Button variant="dark" className="w-100" onClick={() => navigate("/admin-login")}>
+                        {/* <Button variant="dark" className="w-100" onClick={() => navigate("/admin-login")}>
                             Go to Admin Panel
-                        </Button>
+                        </Button> */}
 
                         <Row className="line">
                             <Col lg={12} md={12} xs={12}><hr /></Col>

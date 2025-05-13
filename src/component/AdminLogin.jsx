@@ -10,7 +10,7 @@ function AdminLogin() {
 
     const handleLogin = async (data) => {
         try {
-            const response = await fetch("http://localhost:7000/admin-login", {
+            const response = await fetch("http://localhost:8000/admin-login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

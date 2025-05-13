@@ -1,18 +1,37 @@
 import React from "react";
 import "../css/OrderSuccess.css";
-import { Container, Row, Col,Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearAction } from "../action/cartActions";
+import Header from '../component/Header';
+import HeaderNav from '../component/HeaderNav';
+import Thank from './Thank';
+
 
 
 function OrderSuccess() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleContinue = () => {
-        navigate('/'); // Navigate to homepage
-      };
-      
+        dispatch(clearAction());
+        // navigate('/'); // Navigate to homepage
+        // Navigate to the home page
+        navigate("/", { replace: true });
+
+        // Refresh the homepage by reloading the page after navigating
+        setTimeout(() => {
+            window.location.reload(); // Refresh only the homepage
+        }, 100);
+
+
+    };
+
     return (
         <div>
+            <Header />
+            <HeaderNav />
             <Container fluid>
                 <Row className="justify-content-md-center succ-main">
                     <Col className="succ-in" xs lg={8}>
@@ -28,13 +47,13 @@ function OrderSuccess() {
                                 </Col>
                             </Row>
                             <Row className="mt-3">
-                                          <Col className="d-flex justify-content-end">
-                                            <button className="btn btn-success"  onClick={handleContinue}>
-                                              Continue
-                                            </button>
-                                          </Col>
-                                        </Row>
-                            
+                                <Col className="d-flex justify-content-end">
+                                    <button className="btn btn-success" onClick={handleContinue}>
+                                        Continue
+                                    </button>
+                                </Col>
+                            </Row>
+
 
                         </Card>
 
@@ -46,6 +65,7 @@ function OrderSuccess() {
                 </Row>
 
             </Container>
+            <Thank />
 
 
         </div>

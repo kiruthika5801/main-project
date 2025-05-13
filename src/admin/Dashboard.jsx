@@ -12,7 +12,7 @@ function Dashboard() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:7000/dashboard-summary")
+    fetch("http://localhost:8000/dashboard-summary")
       .then((res) => res.json())
       .then((data) => setDashboardData(data))
       .catch((err) => console.error("Failed to load dashboard data:", err));

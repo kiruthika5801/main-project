@@ -8,6 +8,8 @@ import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { FaTrashAlt } from "react-icons/fa";
+import Pagination from 'react-bootstrap/Pagination';
+
 
 function Order() {
     const [orders, setOrders] = useState([]);
@@ -29,7 +31,13 @@ function Order() {
             const response = await fetch("http://localhost:8000/get-orders");
             const data = await response.json();
             if (response.ok) {
-                setOrders(data.orders);
+                // setOrders(data.orders);
+
+                // Sort orders in descending order by date
+                const sortedOrders = data.orders.sort(
+                    (a, b) => new Date(b.orderDate) - new Date(a.orderDate)
+                );
+                setOrders(sortedOrders);
             } else {
                 console.error("Error fetching orders:", data.error);
             }
@@ -233,17 +241,29 @@ function Order() {
                                 </tbody>
                             </Table>
 
-                            {totalPages > 1 && (
-                                <div className="pagination-controls text-center mt-3">
-                                    <Button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)} className="me-2">
-                                        Previous
-                                    </Button>
-                                    <span>Page {currentPage} of {totalPages}</span>
-                                    <Button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="ms-2">
-                                        Next
-                                    </Button>
-                                </div>
-                            )}
+                            {/* {totalPages > 1 && ( */}
+                            <div className="text-center mt-4">
+                                <Pagination className="justify-content-center">
+                                    <Pagination.Prev
+                                        disabled={currentPage === 1}
+                                        onClick={() => setCurrentPage(currentPage - 1)}
+                                    />
+                                    {Array.from({ length: totalPages }, (_, i) => (
+                                        <Pagination.Item
+                                            key={i + 1}
+                                            active={i + 1 === currentPage}
+                                            onClick={() => setCurrentPage(i + 1)}
+                                        >
+                                            {i + 1}
+                                        </Pagination.Item>
+                                    ))}
+                                    <Pagination.Next
+                                        disabled={currentPage === totalPages}
+                                        onClick={() => setCurrentPage(currentPage + 1)}
+                                    />
+                                </Pagination>
+                            </div>
+                            {/* )} */}
                         </Card.Body>
                     </Card>
                 </Col>

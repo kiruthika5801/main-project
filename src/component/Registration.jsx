@@ -8,6 +8,7 @@ import { Col, Container, Row, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../component/Header';
 import HeaderNav from '../component/HeaderNav';
+import Thank from './Thank';
 
 function Registration() {
   const { register, handleSubmit, formState: { errors }, watch, reset } = useForm({ mode: "onSubmit" });
@@ -225,6 +226,8 @@ function Registration() {
           </Row>
         </Container>
       </form>
+
+       <Thank />
     </div>
   );
 }

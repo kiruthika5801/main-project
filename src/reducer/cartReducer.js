@@ -19,10 +19,17 @@ const cartReducer = (state = initialState, action) => {
         cartItems: updatedCartItems,
         cartCount: Math.max(0, updatedCartItems.length), // Ensure count doesn't go below 0
       };
+      case "CLEAR_CART":
+        return initialState;  // Reset cart to initial state
+
     default:
       return state;
   }
+
+
 };
+
+
 
 export default cartReducer;
 

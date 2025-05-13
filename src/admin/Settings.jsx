@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Admin.css";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Form,
+  Table,
+  Image,
+} from "react-bootstrap";
 
 function Settings() {
   const [product, setProduct] = useState({
     title: "",
     price: 0,
+    rewardPoints: 0,
     image: null,
   });
 
+  const [products, setProducts] = useState([]); // For fetched products
+
+  // Handle input changes
   const handleImageChange = (e) => {
     setProduct({ ...product, image: e.target.files[0] });
   };
@@ -18,6 +31,7 @@ function Settings() {
 
     const formData = new FormData();
     formData.append("title", product.title);
+    formData.append("rewardPoints", product.rewardPoints || 0);
     formData.append("price", product.price);
     formData.append("image", product.image);
 
@@ -30,6 +44,8 @@ function Settings() {
 
       if (response.ok) {
         alert("Product added successfully");
+        fetchProducts(); // Refresh product list
+        setProduct({ title: "", price: 0, rewardPoints: 0, image: null }); // Reset form
       } else {
         alert(`Error: ${data.error}`);
       }
@@ -39,13 +55,48 @@ function Settings() {
     }
   };
 
+  // Fetch products from backend
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/get-products");
+      const data = await response.json();
+      setProducts(data.products); // ✅ Use data.products
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  // Toggle product status
+  const toggleStatus = async (productId) => {
+    try {
+      const response = await fetch(`http://localhost:8000/toggle-product/${productId}`, {
+        method: "POST", // ✅ POST instead of PUT
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        fetchProducts(); // Refresh product list
+      } else {
+        alert("Failed to change product status");
+      }
+    } catch (error) {
+      console.error("Error toggling product status:", error);
+      alert("Failed to change product status");
+    }
+  };
+
   return (
     <Container className="mt-4">
       <Row>
         <Col>
           <Card>
             <Card.Body>
-              {/* <h4 className="mb-4 text-center">Add Product</h4> */}
+              <h4 className="mb-4 text-center">Add Product</h4>
               <Form onSubmit={handleSubmit}>
                 <Row className="align-items-end">
                   <Col md={3}>
@@ -61,6 +112,21 @@ function Settings() {
                       />
                     </Form.Group>
                   </Col>
+
+                  <Col md={2}>
+                    <Form.Group controlId="rewardPoints">
+                      <Form.Label>Reward Points</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={product.rewardPoints}
+                        onChange={(e) =>
+                          setProduct({ ...product, rewardPoints: e.target.value })
+                        }
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+
 
                   <Col md={2}>
                     <Form.Group controlId="productPrice">
@@ -96,6 +162,75 @@ function Settings() {
               </Form>
             </Card.Body>
           </Card>
+
+          {/* Products Table */}
+          <Card className="mt-4 cate-card">
+            <Card.Body>
+              <h5 className="mb-3">Product List</h5>
+              <Table bordered responsive hover>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Product ID</th>
+                    <th>Title</th>
+                    <th>Reward Points</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Toggle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.length > 0 ? (
+                    products.map((item, index) => (
+                      <tr key={item._id}>
+                        <td>{index + 1}</td>
+                        <td>{item._id}</td>
+                        <td>{item.title}</td>
+                        <td>{item.rewardPoints}</td>
+                        <td>${item.price}</td>
+                        <td>
+                          {item.imageUrl && (
+                            <Image
+                              src={item.imageUrl}
+                              alt={item.title}
+                              width="70"
+                              height="70"
+                              rounded
+                            />
+                          )}
+                        </td>
+                        <td>
+                          {item.status === "enabled" ? (
+                            <span className="text-success">Enabled</span>
+                          ) : (
+                            <span className="text-danger">Disabled</span>
+                          )}
+                        </td>
+                        <td>
+                          <Button
+                            variant={
+                              item.status === "enabled" ? "danger" : "success"
+                            }
+                            size="sm"
+                            onClick={() => toggleStatus(item._id)}
+                          >
+                            {item.status === "enabled" ? "Disable" : "Enable"}
+                          </Button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="7" className="text-center">
+                        No products found
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
@@ -103,5 +238,6 @@ function Settings() {
 }
 
 export default Settings;
+
 
 

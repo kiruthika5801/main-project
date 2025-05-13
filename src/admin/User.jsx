@@ -8,6 +8,7 @@ import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { FaTrashAlt } from "react-icons/fa";
+import Pagination from 'react-bootstrap/Pagination';
 
 function User() {
     const [users, setUsers] = useState([]);
@@ -113,21 +114,21 @@ function User() {
 
     const handleDelete = async (id) => {
         const isSelected = selectedUsers.includes(id);
-    
+
         if (!isSelected) {
             alert("Please select this user by checkbox before deleting.");
             return;
         }
-    
+
         const confirmDelete = window.confirm("Are you sure you want to delete this user?");
         if (!confirmDelete) return;
-    
+
         try {
             const response = await fetch(`http://localhost:8000/delete-user/${id}`, {
                 method: "DELETE"
             });
             const data = await response.json();
-    
+
             if (response.ok) {
                 alert("User deleted successfully!");
                 fetchUsers();
@@ -146,17 +147,17 @@ function User() {
             alert("Please select at least one user to delete.");
             return;
         }
-    
+
         const confirmDelete = window.confirm("Are you sure you want to delete selected users?");
         if (!confirmDelete) return;
-    
+
         try {
             for (const id of selectedUsers) {
                 await fetch(`http://localhost:8000/delete-user/${id}`, {
                     method: "DELETE"
                 });
             }
-    
+
             alert("Selected users deleted successfully!");
             setSelectedUsers([]);
             setSelectAll(false);
@@ -250,25 +251,29 @@ function User() {
                                 </tbody>
                             </Table>
 
-                            {totalPages > 1 && (
-                                <div className="pagination-controls text-center mt-3">
-                                    <Button
+                            {/* {totalPages > 1 && ( */}
+                            <div className="text-center mt-4">
+                                <Pagination className="justify-content-center">
+                                    <Pagination.Prev
                                         disabled={currentPage === 1}
                                         onClick={() => setCurrentPage(currentPage - 1)}
-                                        className="me-2"
-                                    >
-                                        Previous
-                                    </Button>
-                                    <span>Page {currentPage} of {totalPages}</span>
-                                    <Button
+                                    />
+                                    {Array.from({ length: totalPages }, (_, i) => (
+                                        <Pagination.Item
+                                            key={i + 1}
+                                            active={i + 1 === currentPage}
+                                            onClick={() => setCurrentPage(i + 1)}
+                                        >
+                                            {i + 1}
+                                        </Pagination.Item>
+                                    ))}
+                                    <Pagination.Next
                                         disabled={currentPage === totalPages}
                                         onClick={() => setCurrentPage(currentPage + 1)}
-                                        className="ms-2"
-                                    >
-                                        Next
-                                    </Button>
-                                </div>
-                            )}
+                                    />
+                                </Pagination>
+                            </div>
+                            {/* )}   */}
                         </Card.Body>
                     </Card>
                 </Col>

@@ -8,4 +8,9 @@ export const removeFromCart = (productId) => ({
     payload: productId,
 });
 
+export const clearAction = () => ({
+    type: "CLEAR_CART",  // Action type for clearing the cart
+  });
+  
+
 

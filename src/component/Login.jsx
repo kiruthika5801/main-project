@@ -7,6 +7,7 @@ import { loginUser } from "../action/userAction";
 import "../css/Login.css";
 import Header from '../component/Header';
 import HeaderNav from '../component/HeaderNav';
+import Thank from './Thank';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -140,7 +141,9 @@ function Login() {
 
                 </form>
             </Container>
+            <Thank />
         </div>
+        
     );
 }
 

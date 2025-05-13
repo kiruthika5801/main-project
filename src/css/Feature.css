@@ -1,0 +1,65 @@
+.feature-main{
+    /* background-color: aqua; */
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature-in{
+    /* background-color: beige; */
+    height: 280px;
+}
+
+.feature-in p {
+  margin-bottom:20px;
+}
+.team-main{
+    /* background-color: aqua; */
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.team-in{
+    /* background-color: beige; */
+    height: 210px;
+}
+.team-in p {
+  /* text-align: center; */
+  margin-bottom: 20px;
+}
+.OurServices-main{
+  /* background-color: aqua; */
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.OurServices-in{
+    /* background-color: beige; */
+    height: 340px;
+}
+.OurServices-in h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.OurServices-in p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.Single-main{
+  /* background-color: aqua; */
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.Single-in{
+    /* background-color: beige; */
+    height: 340px;
+}

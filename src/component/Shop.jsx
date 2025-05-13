@@ -17,20 +17,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../action/cartActions";
 import { showAlert } from "../action/alertActions";
 
+
 const products = [
-  { id: "1", title: "Flower Decor", price: 55, className: "card-sImgOne", image: productOne },
-  { id: "2", title: "Wedding Arch", price: 65, className: "card-sImgTwo", image: productTwo },
-  { id: "3", title: "Table Centerpiece", price: 87, className: "card-sImgThree", image: productThree },
-  { id: "4", title: "Wedding Bouquet", price: 112, className: "card-sImgFour", image: productFour },
-  { id: "5", title: "Wedding Candles", price: 45, className: "card-sImgFive", image: productFive },
-  { id: "6", title: "Wedding Lighted Signs", price: 130, className: "card-sImgSix", image: productSix }
+  { id: "1", title: "Flower Decor", price: 55, className: "card-sImgOne", image: productOne,rewardPoints:20 },
+  { id: "2", title: "Wedding Arch", price: 65, className: "card-sImgTwo", image: productTwo ,rewardPoints:10},
+  { id: "3", title: "Table Centerpiece", price: 87, className: "card-sImgThree", image: productThree,rewardPoints:30 },
+  { id: "4", title: "Wedding Bouquet", price: 112, className: "card-sImgFour", image: productFour,rewardPoints:12 },
+  { id: "5", title: "Wedding Candles", price: 45, className: "card-sImgFive", image: productFive,rewardPoints:10 },
+  { id: "6", title: "Wedding Lighted Signs", price: 130, className: "card-sImgSix", image: productSix,rewardPoints:23}
 ];
 
 function Shop() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
-  
+
   // State to store fetched products
   const [fetchedProducts, setFetchedProducts] = useState([]);
 
@@ -52,7 +53,7 @@ function Shop() {
   // Function to add product to the cart
   const handleAddToCart = (product) => {
     if (!product.id) return alert("Error: Missing product ID!");
-    
+
     dispatch(addToCart(product));
     dispatch(showAlert(product.title));
   };
@@ -142,12 +143,16 @@ function Shop() {
             <Row className="shop-boxOne">
               {fetchedProducts.map((product) => (
                 <Col key={product._id} className="d-flex justify-content-center" lg={4} md={4} sm={4}>
-                  <Card className="card-sWhite">
-                    <div className="card-sImg">
-                    <img src={product.imageUrl} alt={product.title} className="shop-product-img"/>
-
+                  <Card className="card-sWhite position-relative">
+                    <div className="card-sImg position-relative">
+                      <img src={product.imageUrl} alt={product.title} className="shop-product-img" />
+                      {product.status === "disabled" && (
+                        <div className="out-of-stock-text-overlay">
+                          OUT OF STOCK
+                        </div>
+                      )}
                     </div>
-                    <Card.Body>
+                    <Card.Body className={product.status === "disabled" ? "muted-card" : ""}>
                       <Card.Title className="card-Shead">{product.title}</Card.Title>
                       <Card.Text className="card-price">${product.price}.00</Card.Text>
                       <Button
@@ -157,6 +162,7 @@ function Shop() {
                           handleAddToCart(product);
                           handleAddOrder(product);
                         }}
+                        disabled={product.status === "disabled"}
                       >
                         ADD TO CART
                       </Button>
@@ -164,6 +170,7 @@ function Shop() {
                   </Card>
                 </Col>
               ))}
+
             </Row>
           )}
         </Col>

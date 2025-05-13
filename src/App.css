@@ -174,10 +174,12 @@
 .welcome {
   --bs-gutter-x: 0px !important;
 }
-.welcome .carousel-control-prev-icon{
+
+.welcome .carousel-control-prev-icon {
   display: none;
 }
-.welcome .carousel-control-next-icon{
+
+.welcome .carousel-control-next-icon {
   display: none;
 
 }
@@ -698,6 +700,7 @@
   opacity: 0.8;
   /* Apply 80% opacity to the entire element */
 }
+
 .card-sImgTwo:hover .shopHover {
   visibility: visible;
 }
@@ -707,6 +710,7 @@
   filter: brightness(0.6);
   opacity: 0.8;
 }
+
 .card-sImgThree:hover .shopHover {
   visibility: visible;
 }
@@ -716,6 +720,7 @@
   filter: brightness(0.6);
   opacity: 0.8;
 }
+
 .card-sImgFour:hover .shopHover {
   visibility: visible;
 }
@@ -725,6 +730,7 @@
   filter: brightness(0.6);
   opacity: 0.8;
 }
+
 .card-sImgFive:hover .shopHover {
   visibility: visible;
 }
@@ -734,7 +740,8 @@
   filter: brightness(0.6);
   opacity: 0.8;
 }
-.card-sImgSix:hover .shopHover{
+
+.card-sImgSix:hover .shopHover {
   visibility: visible;
 }
 
@@ -752,7 +759,7 @@
 }
 
 .shop {
-  background-color: aqua;
+  /* background-color: aqua; */
   /* height: 1580px; */
   height: auto;
   display: flex;
@@ -760,7 +767,7 @@
 }
 
 .shop-main {
-  background-color: beige;
+  /* background-color: beige; */
   /* height: 1545px; */
   height: auto;
 }
@@ -775,7 +782,8 @@
 
 .shop-boxOne {
   /* background-color: cadetblue; */
-  height: 640px;
+  /* height: 640px; */
+  height: auto;
   margin-bottom: 60px;
 }
 
@@ -803,6 +811,7 @@
   overflow: hidden;
 
 }
+
 .shop-product-img {
   width: 369px;
   height: 409px;
@@ -1647,6 +1656,7 @@
   color: white;
   border: none;
 }
+
 /* thank */
 .thank {
   /* background-color: darkcyan; */
@@ -1660,18 +1670,21 @@
   /* background-color: beige; */
   height: 400px;
 }
-.thankLogo{
+
+.thankLogo {
   /* background-color:lightgrey; */
   height: 145px;
   display: flex;
   text-align: center;
   align-items: center;
 }
-.logoThank{
+
+.logoThank {
   width: 290px;
   height: 120px;
 }
-.thankIcon{
+
+.thankIcon {
   /* background-color:burlywood; */
   height: 170px;
   display: flex;
@@ -1680,51 +1693,93 @@
   border: none;
   /* border-bottom:1px solid #8a8a8a; */
 }
-.thankIn{
+
+.thankIn {
   /* background-color:#928b84; */
   height: 120px;
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.iconOuter{
+.iconOuter {
   background-color: #88915c;
   width: 50px;
   height: 50px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
-.iconInner{
+
+.iconInner {
   color: white;
   width: 20px;
   height: 20px;
   text-align: center;
 }
-.line{
+
+.line {
   height: 30px;
   /* background-color: lightcyan; */
   display: flex;
   align-items: end;
 }
-.policy{
+
+.policy {
   /* background-color: cadetblue; */
   height: 50px;
   display: flex;
   align-items: center;
- text-align: center;
+  text-align: center;
 }
-.thankLast{
+
+.thankLast {
   font-size: 14px;
   font-family: "PT Serif", serif;
   color: #928b84;
 }
-.lastThank{
+
+.lastThank {
   text-decoration: none;
   color: #928b84;
 }
+
+
+
+
+/* Add this in your App.css or a separate CSS file */
+.muted-card {
+  opacity: 0.5;
+  pointer-events: none;
+  /* Prevent interactions */
+}
+
+.card-shopbtn:disabled {
+  background-color: #d3d3d3;
+  /* Change color to indicate it's disabled */
+  border: 1px solid #ccc;
+}
+
+.out-of-stock-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  text-shadow: 1px 1px 2px black;
+}
+
+
+
 @media (max-width: 325px) {
 
   .navbar-toggler-icon {
@@ -1732,45 +1787,62 @@ justify-content: center;
     right: 40px;
     bottom: 0;
   }
+
   .card-btn {
     margin-left: 18px !important;
   }
+
   /* box */
   .content-icon {
     left: 50px !important;
     top: -60px !important;
   }
+
   /* inspiration */
   .ins-box {
     height: 600px !important;
   }
+
   .ins-right {
     height: 585px !important;
   }
+
   .i-main {
     height: 570px !important;
   }
+
   .i-para {
     height: 260px !important;
   }
+
   .i-last {
     height: 145px !important;
   }
+
   .i-btnn {
     width: 80% !important;
   }
+
   /* shop */
   .shop-main {
     width: 90% !important;
+    height: auto;
+    min-height: 100vh;
+   
   }
-  
+  .shop-boxOne {
+    height: auto !important;
+  }
+
   /* about */
   .about-main {
     height: 880px;
   }
+
   .a-one {
     height: 630px !important;
   }
+
   .a-last {
     height: 260px !important;
   }
@@ -1788,24 +1860,30 @@ justify-content: center;
     width: 16% !important;
     height: 33px !important;
   }
+
   .price-img {
     width: 240px !important;
     height: 125.28px;
   }
+
   .up-left {
     font-size: 21px;
   }
+
   .pic-one {
     width: 323.23px !important;
     height: 323.23px !important;
   }
+
   .pic-main {
     height: 330px !important;
   }
+
   .pic-box {
     height: 335px !important;
   }
-  .logoThank{
+
+  .logoThank {
     width: 240px !important;
   }
 }
@@ -1818,7 +1896,8 @@ justify-content: center;
   .greenOne {
     width: 75% !important;
   }
-  .content-icon{
+
+  .content-icon {
     left: 72px !important;
   }
 
@@ -1856,7 +1935,10 @@ justify-content: center;
   .pic-box {
     height: 440px;
   }
-  
+  .shop-boxOne {
+    height: auto !important;
+  }
+
 
 }
 
@@ -1864,13 +1946,16 @@ justify-content: center;
   .one {
     display: none;
   }
+
   .logo {
     width: 100%;
   }
+
   .left {
     /* background-color: transparent; */
     height: 55px;
   }
+
   .three .left span {
     display: none;
   }
@@ -1880,12 +1965,14 @@ justify-content: center;
     justify-content: end;
     position: relative;
   }
+
   .bar-out {
     position: absolute;
     left: 260px;
     top: 50px;
     width: 20% !important;
   }
+
   .bar {
     background-image: none;
     height: auto;
@@ -1893,10 +1980,12 @@ justify-content: center;
     padding: 0;
     /* Ensure no extra padding */
   }
+
   .navbar-nav .nav-link {
     color: white;
     border-bottom: 1px solid #88915c;
   }
+
   .navbar-nav {
     background-color: #a3ad6f;
   }
@@ -1908,6 +1997,7 @@ justify-content: center;
   .offcanvas-backdrop {
     display: none;
   }
+
   .offcanvas {
     --bs-offcanvas-width: 506px !important;
     top: 180px !important;
@@ -1917,42 +2007,52 @@ justify-content: center;
   .bag {
     color: rgba(0, 0, 0, 0.599) !important;
   }
+
   /* carousal */
   .carousel-caption h1 {
     font-size: 14px;
   }
+
   .captionOne,
   .captionTwo,
   .captionThree {
     left: 125px !important;
     bottom: 250px !important;
   }
+
   .images {
     display: none;
   }
+
   .carousel-indicators button {
     display: none;
   }
+
   /* green */
   .greenOne {
     font-size: 18.852px;
     margin: 0 auto;
     text-align: center;
   }
+
   .greenTwo {
     margin: 0 auto;
   }
+
   .green-btn {
     font-size: 10.284px;
     letter-spacing: 1px;
   }
+
   /* welcome */
   .wel-one {
     font-size: 24px;
   }
+
   .wel-two {
     font-size: 10.284px;
   }
+
   .linkHover {
     width: 80px;
     height: 80px;
@@ -1964,6 +2064,7 @@ justify-content: center;
     width: 50%;
     height: 60px;
   }
+
   .box {
     height: 1585px;
     display: flex;
@@ -2041,21 +2142,29 @@ justify-content: center;
 
   /* shop */
   .shop {
-    height: 3450px;
+    /* height: 3450px; */
+    height: auto;
+    min-height: 100vh;
+   
   }
 
   .shop-main {
-    height: 3430px;
+    /* height: 3430px; */
+    height: auto;
+    min-height: 100vh;
+   
   }
 
   .shop-boxOne {
-    height: 1580px;
+    /* height: 1580px; */
+    height: auto !important;
   }
 
   .shop-boxTwo {
     height: 1620px;
   }
-  .shopHover{
+
+  .shopHover {
     top: 100px;
     left: 95px;
   }
@@ -2166,7 +2275,8 @@ justify-content: center;
     width: 90px;
     height: 90px;
   }
-  .content-head{
+
+  .content-head {
     height: 60px;
   }
 
@@ -2326,19 +2436,21 @@ justify-content: center;
   .formOne {
     height: 100PX;
   }
+
   .form-main {
     height: 340px;
   }
-  .formBtnn{
+
+  .formBtnn {
     height: 63px;
     width: 70%;
   }
 
   /* thank */
-  .thankLast{
+  .thankLast {
     font-size: 12px;
   }
-  
+
 }
 
 /*  Tablets in portrait mode.  */
@@ -2518,7 +2630,8 @@ justify-content: center;
   }
 
   .shop-boxOne {
-    height: 480px;
+    /* height: 480px; */
+    height: auto;
   }
 
   .shop-boxTwo {
@@ -2526,17 +2639,25 @@ justify-content: center;
   }
 
   .shop-main {
-    height: 1185px;
+    /* height: 1185px; */
+    height: auto;
+    min-height: 100vh;
+   
   }
 
   .shop {
-    height: 1205px;
+    /* height: 1205px; */
+    height: auto;
+    min-height: 100vh;
+   
   }
+
   .shopIcon {
     width: 40%;
     height: 60px;
   }
-  .shopHover{
+
+  .shopHover {
     top: 70px;
     left: 60px;
     width: 80px;
@@ -2747,20 +2868,28 @@ justify-content: center;
     height: 336px;
   }
 
-  .content-main{
+  .content-main {
     width: 90% !important;
   }
 
   /* shop */
   .shop-main {
     width: 97% !important;
-    height: 1445px;
+    /* height: 1445px; */
+    height: auto;
+    min-height: 100vh;
+    /* Optional: ensures at least full screen */
   }
 
   .shop {
-    height: 1465px;
+    /* height: 1465px; */
+    height: auto;
+    /* ✅ Good for dynamic content */
+    min-height: 100vh;
+    /* Optional: ensures at least full screen */
   }
-  .shopHover{
+
+  .shopHover {
     left: 100px;
     top: 100px;
   }
@@ -2890,11 +3019,12 @@ justify-content: center;
   .pic-box {
     height: 270px;
   }
-  .info-main{
+
+  .info-main {
     width: 90% !important;
 
   }
-  
+
 
 
 
